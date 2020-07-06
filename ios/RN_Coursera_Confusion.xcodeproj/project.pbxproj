@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* RN_Cousera_ConfusionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RN_Cousera_ConfusionTests.m */; };
+		00E356F31AD99517003FC87E /* RN_Coursera_ConfusionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RN_Coursera_ConfusionTests.m */; };
+		0FFFB390EEBBCEEE14E04E31 /* libPods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AE118FDC9D68E3F17839BD /* libPods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -15,11 +16,10 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* RN_Cousera_ConfusionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RN_Cousera_ConfusionTests.m */; };
-		352D1A6CAB5209B7BA508F1D /* libPods-RN_Cousera_Confusion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1E1E74AC226FDA65871FBC /* libPods-RN_Cousera_Confusion.a */; };
-		66E5ADF41A094F2C00B4AE11 /* libPods-RN_Cousera_Confusion-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FACE189AFA4D1858F7DC2D1E /* libPods-RN_Cousera_Confusion-tvOS.a */; };
-		9CC82FF6228F036A5F7DAE9E /* libPods-RN_Cousera_Confusion-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A005FD8B6FCBD7A6AA8EF41C /* libPods-RN_Cousera_Confusion-tvOSTests.a */; };
-		F0CE8752EAFF832C4CAAF676 /* libPods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 949ABF4E09214B96D2C542F3 /* libPods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* RN_Coursera_ConfusionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RN_Coursera_ConfusionTests.m */; };
+		3D9652E6D0F226F1CD4AD1F3 /* libPods-RN_Coursera_Confusion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 692345683A83225C0CD55710 /* libPods-RN_Coursera_Confusion.a */; };
+		434C7EB7D6533D9182DD7163 /* libPods-RN_Coursera_Confusion-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E456A2BA12C1E1030AEE3D4 /* libPods-RN_Coursera_Confusion-tvOS.a */; };
+		F7DA23209F513A7465D2D3E3 /* libPods-RN_Coursera_Confusion-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5E3E8BBFD4541E0D4CEFDB /* libPods-RN_Coursera_Confusion-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,45 +28,45 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = RN_Cousera_Confusion;
+			remoteInfo = RN_Coursera_Confusion;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "RN_Cousera_Confusion-tvOS";
+			remoteInfo = "RN_Coursera_Confusion-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* RN_Cousera_ConfusionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RN_Cousera_ConfusionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* RN_Coursera_ConfusionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RN_Coursera_ConfusionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* RN_Cousera_ConfusionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RN_Cousera_ConfusionTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* RN_Cousera_Confusion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RN_Cousera_Confusion.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RN_Cousera_Confusion/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RN_Cousera_Confusion/AppDelegate.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* RN_Coursera_ConfusionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RN_Coursera_ConfusionTests.m; sourceTree = "<group>"; };
+		0443A359FA0BFA6D452D8849 /* Pods-RN_Coursera_Confusion-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Coursera_Confusion-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RN_Coursera_Confusion-tvOSTests/Pods-RN_Coursera_Confusion-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		04AE118FDC9D68E3F17839BD /* libPods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* RN_Coursera_Confusion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RN_Coursera_Confusion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RN_Coursera_Confusion/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RN_Coursera_Confusion/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RN_Cousera_Confusion/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RN_Cousera_Confusion/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RN_Cousera_Confusion/main.m; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RN_Cousera_Confusion-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RN_Cousera_Confusion-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D57E5AB1C559C50EFF36DC1 /* Pods-RN_Cousera_Confusion-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Cousera_Confusion-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-RN_Cousera_Confusion-tvOSTests/Pods-RN_Cousera_Confusion-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		31190B7395E2D66A17DDE48C /* Pods-RN_Cousera_Confusion-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Cousera_Confusion-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RN_Cousera_Confusion-tvOSTests/Pods-RN_Cousera_Confusion-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		61E86E8E43C7E1B54B107FD4 /* Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.release.xcconfig"; path = "Target Support Files/Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests/Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.release.xcconfig"; sourceTree = "<group>"; };
-		6788E5BCCC53A5DEBD714ECD /* Pods-RN_Cousera_Confusion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Cousera_Confusion.debug.xcconfig"; path = "Target Support Files/Pods-RN_Cousera_Confusion/Pods-RN_Cousera_Confusion.debug.xcconfig"; sourceTree = "<group>"; };
-		6A1E1E74AC226FDA65871FBC /* libPods-RN_Cousera_Confusion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN_Cousera_Confusion.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		802376F78AA9EC9437F043D0 /* Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.debug.xcconfig"; path = "Target Support Files/Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests/Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.debug.xcconfig"; sourceTree = "<group>"; };
-		949ABF4E09214B96D2C542F3 /* libPods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A005FD8B6FCBD7A6AA8EF41C /* libPods-RN_Cousera_Confusion-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN_Cousera_Confusion-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B066B92140C96579FFF6FE8B /* Pods-RN_Cousera_Confusion-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Cousera_Confusion-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-RN_Cousera_Confusion-tvOS/Pods-RN_Cousera_Confusion-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		D32AE2F28739376C6E6CE1E0 /* Pods-RN_Cousera_Confusion-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Cousera_Confusion-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RN_Cousera_Confusion-tvOS/Pods-RN_Cousera_Confusion-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RN_Coursera_Confusion/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RN_Coursera_Confusion/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RN_Coursera_Confusion/main.m; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RN_Coursera_Confusion-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RN_Coursera_Confusion-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		473283454469B6D69F31D5AA /* Pods-RN_Coursera_Confusion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Coursera_Confusion.debug.xcconfig"; path = "Target Support Files/Pods-RN_Coursera_Confusion/Pods-RN_Coursera_Confusion.debug.xcconfig"; sourceTree = "<group>"; };
+		4F99E5DC6C63ADF2FEBE5937 /* Pods-RN_Coursera_Confusion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Coursera_Confusion.release.xcconfig"; path = "Target Support Files/Pods-RN_Coursera_Confusion/Pods-RN_Coursera_Confusion.release.xcconfig"; sourceTree = "<group>"; };
+		692345683A83225C0CD55710 /* libPods-RN_Coursera_Confusion.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN_Coursera_Confusion.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A48F88C68AC56229C022260 /* Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.debug.xcconfig"; path = "Target Support Files/Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests/Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E5E3E8BBFD4541E0D4CEFDB /* libPods-RN_Coursera_Confusion-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN_Coursera_Confusion-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FDF94C3DA2CE03285C44A6 /* Pods-RN_Coursera_Confusion-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Coursera_Confusion-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RN_Coursera_Confusion-tvOS/Pods-RN_Coursera_Confusion-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		9E456A2BA12C1E1030AEE3D4 /* libPods-RN_Coursera_Confusion-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN_Coursera_Confusion-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A364C0ECE3F92455ACDF250D /* Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.release.xcconfig"; path = "Target Support Files/Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests/Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.release.xcconfig"; sourceTree = "<group>"; };
+		D7AEE418B008458C28840922 /* Pods-RN_Coursera_Confusion-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Coursera_Confusion-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-RN_Coursera_Confusion-tvOSTests/Pods-RN_Coursera_Confusion-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		FACE189AFA4D1858F7DC2D1E /* libPods-RN_Cousera_Confusion-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RN_Cousera_Confusion-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF8D3A7D4756BDEE67D51B01 /* Pods-RN_Cousera_Confusion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Cousera_Confusion.release.xcconfig"; path = "Target Support Files/Pods-RN_Cousera_Confusion/Pods-RN_Cousera_Confusion.release.xcconfig"; sourceTree = "<group>"; };
+		F25CCA4F79E0CACE59DA98A9 /* Pods-RN_Coursera_Confusion-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RN_Coursera_Confusion-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-RN_Coursera_Confusion-tvOS/Pods-RN_Coursera_Confusion-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0CE8752EAFF832C4CAAF676 /* libPods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.a in Frameworks */,
+				0FFFB390EEBBCEEE14E04E31 /* libPods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				352D1A6CAB5209B7BA508F1D /* libPods-RN_Cousera_Confusion.a in Frameworks */,
+				3D9652E6D0F226F1CD4AD1F3 /* libPods-RN_Coursera_Confusion.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66E5ADF41A094F2C00B4AE11 /* libPods-RN_Cousera_Confusion-tvOS.a in Frameworks */,
+				434C7EB7D6533D9182DD7163 /* libPods-RN_Coursera_Confusion-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,20 +98,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CC82FF6228F036A5F7DAE9E /* libPods-RN_Cousera_Confusion-tvOSTests.a in Frameworks */,
+				F7DA23209F513A7465D2D3E3 /* libPods-RN_Coursera_Confusion-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* RN_Cousera_ConfusionTests */ = {
+		00E356EF1AD99517003FC87E /* RN_Coursera_ConfusionTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* RN_Cousera_ConfusionTests.m */,
+				00E356F21AD99517003FC87E /* RN_Coursera_ConfusionTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = RN_Cousera_ConfusionTests;
+			path = RN_Coursera_ConfusionTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -122,7 +122,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* RN_Cousera_Confusion */ = {
+		13B07FAE1A68108700A75B9A /* RN_Coursera_Confusion */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -133,7 +133,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = RN_Cousera_Confusion;
+			name = RN_Coursera_Confusion;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -141,28 +141,12 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				6A1E1E74AC226FDA65871FBC /* libPods-RN_Cousera_Confusion.a */,
-				949ABF4E09214B96D2C542F3 /* libPods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.a */,
-				FACE189AFA4D1858F7DC2D1E /* libPods-RN_Cousera_Confusion-tvOS.a */,
-				A005FD8B6FCBD7A6AA8EF41C /* libPods-RN_Cousera_Confusion-tvOSTests.a */,
+				692345683A83225C0CD55710 /* libPods-RN_Coursera_Confusion.a */,
+				04AE118FDC9D68E3F17839BD /* libPods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.a */,
+				9E456A2BA12C1E1030AEE3D4 /* libPods-RN_Coursera_Confusion-tvOS.a */,
+				8E5E3E8BBFD4541E0D4CEFDB /* libPods-RN_Coursera_Confusion-tvOSTests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		42D8CFC684B685E5EF4B528D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6788E5BCCC53A5DEBD714ECD /* Pods-RN_Cousera_Confusion.debug.xcconfig */,
-				FF8D3A7D4756BDEE67D51B01 /* Pods-RN_Cousera_Confusion.release.xcconfig */,
-				802376F78AA9EC9437F043D0 /* Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.debug.xcconfig */,
-				61E86E8E43C7E1B54B107FD4 /* Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.release.xcconfig */,
-				B066B92140C96579FFF6FE8B /* Pods-RN_Cousera_Confusion-tvOS.debug.xcconfig */,
-				D32AE2F28739376C6E6CE1E0 /* Pods-RN_Cousera_Confusion-tvOS.release.xcconfig */,
-				31190B7395E2D66A17DDE48C /* Pods-RN_Cousera_Confusion-tvOSTests.debug.xcconfig */,
-				2D57E5AB1C559C50EFF36DC1 /* Pods-RN_Cousera_Confusion-tvOSTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -175,12 +159,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* RN_Cousera_Confusion */,
+				13B07FAE1A68108700A75B9A /* RN_Coursera_Confusion */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* RN_Cousera_ConfusionTests */,
+				00E356EF1AD99517003FC87E /* RN_Coursera_ConfusionTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				42D8CFC684B685E5EF4B528D /* Pods */,
+				CA99D7DB6BFAA44A9086F25E /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -190,83 +174,100 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* RN_Cousera_Confusion.app */,
-				00E356EE1AD99517003FC87E /* RN_Cousera_ConfusionTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* RN_Coursera_Confusion.app */,
+				00E356EE1AD99517003FC87E /* RN_Coursera_ConfusionTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CA99D7DB6BFAA44A9086F25E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				473283454469B6D69F31D5AA /* Pods-RN_Coursera_Confusion.debug.xcconfig */,
+				4F99E5DC6C63ADF2FEBE5937 /* Pods-RN_Coursera_Confusion.release.xcconfig */,
+				7A48F88C68AC56229C022260 /* Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.debug.xcconfig */,
+				A364C0ECE3F92455ACDF250D /* Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.release.xcconfig */,
+				F25CCA4F79E0CACE59DA98A9 /* Pods-RN_Coursera_Confusion-tvOS.debug.xcconfig */,
+				99FDF94C3DA2CE03285C44A6 /* Pods-RN_Coursera_Confusion-tvOS.release.xcconfig */,
+				0443A359FA0BFA6D452D8849 /* Pods-RN_Coursera_Confusion-tvOSTests.debug.xcconfig */,
+				D7AEE418B008458C28840922 /* Pods-RN_Coursera_Confusion-tvOSTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* RN_Cousera_ConfusionTests */ = {
+		00E356ED1AD99517003FC87E /* RN_Coursera_ConfusionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RN_Cousera_ConfusionTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RN_Coursera_ConfusionTests" */;
 			buildPhases = (
-				6531E837BBB28A520497A1F7 /* [CP] Check Pods Manifest.lock */,
+				AB629940AEDF302D91BE1EBB /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				BC5D4D31A8F238943F1595AF /* [CP] Copy Pods Resources */,
+				A28714427288276E5455BBA3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = RN_Cousera_ConfusionTests;
-			productName = RN_Cousera_ConfusionTests;
-			productReference = 00E356EE1AD99517003FC87E /* RN_Cousera_ConfusionTests.xctest */;
+			name = RN_Coursera_ConfusionTests;
+			productName = RN_Coursera_ConfusionTests;
+			productReference = 00E356EE1AD99517003FC87E /* RN_Coursera_ConfusionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* RN_Cousera_Confusion */ = {
+		13B07F861A680F5B00A75B9A /* RN_Coursera_Confusion */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RN_Cousera_Confusion" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RN_Coursera_Confusion" */;
 			buildPhases = (
-				0C879EE7CAA032795BE35EF7 /* [CP] Check Pods Manifest.lock */,
+				FBBFFF53921753CEF77E722D /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				C42DD01E7DD414C00787E545 /* [CP] Copy Pods Resources */,
+				18D760F6B69557F0B069572C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RN_Cousera_Confusion;
-			productName = RN_Cousera_Confusion;
-			productReference = 13B07F961A680F5B00A75B9A /* RN_Cousera_Confusion.app */;
+			name = RN_Coursera_Confusion;
+			productName = RN_Coursera_Confusion;
+			productReference = 13B07F961A680F5B00A75B9A /* RN_Coursera_Confusion.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RN_Cousera_Confusion-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RN_Coursera_Confusion-tvOS" */;
 			buildPhases = (
-				75570C93B1271C1669498177 /* [CP] Check Pods Manifest.lock */,
+				320EADA82125870BD97FF4D1 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
 				2D02E4791E0B4A5D006451C7 /* Resources */,
 				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
+				AEAC1D435F0F2A90D0A4BBF2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "RN_Cousera_Confusion-tvOS";
-			productName = "RN_Cousera_Confusion-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOS.app */;
+			name = "RN_Coursera_Confusion-tvOS";
+			productName = "RN_Coursera_Confusion-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RN_Cousera_Confusion-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RN_Coursera_Confusion-tvOSTests" */;
 			buildPhases = (
-				970F4A52D486978589678200 /* [CP] Check Pods Manifest.lock */,
+				1A2FDBB7F759B231D6B3CA1E /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -276,9 +277,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "RN_Cousera_Confusion-tvOSTests";
-			productName = "RN_Cousera_Confusion-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOSTests.xctest */;
+			name = "RN_Coursera_Confusion-tvOSTests";
+			productName = "RN_Coursera_Confusion-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -307,7 +308,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RN_Cousera_Confusion" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RN_Coursera_Confusion" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -320,10 +321,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* RN_Cousera_Confusion */,
-				00E356ED1AD99517003FC87E /* RN_Cousera_ConfusionTests */,
-				2D02E47A1E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* RN_Coursera_Confusion */,
+				00E356ED1AD99517003FC87E /* RN_Coursera_ConfusionTests */,
+				2D02E47A1E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -377,7 +378,55 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		0C879EE7CAA032795BE35EF7 /* [CP] Check Pods Manifest.lock */ = {
+		18D760F6B69557F0B069572C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RN_Coursera_Confusion/Pods-RN_Coursera_Confusion-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RN_Coursera_Confusion/Pods-RN_Coursera_Confusion-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A2FDBB7F759B231D6B3CA1E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,7 +441,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RN_Cousera_Confusion-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RN_Coursera_Confusion-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -413,7 +462,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		6531E837BBB28A520497A1F7 /* [CP] Check Pods Manifest.lock */ = {
+		320EADA82125870BD97FF4D1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -428,64 +477,20 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RN_Coursera_Confusion-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		75570C93B1271C1669498177 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RN_Cousera_Confusion-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		970F4A52D486978589678200 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RN_Cousera_Confusion-tvOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BC5D4D31A8F238943F1595AF /* [CP] Copy Pods Resources */ = {
+		A28714427288276E5455BBA3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests/Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests/Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -524,16 +529,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests/Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests/Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C42DD01E7DD414C00787E545 /* [CP] Copy Pods Resources */ = {
+		AB629940AEDF302D91BE1EBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEAC1D435F0F2A90D0A4BBF2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RN_Cousera_Confusion/Pods-RN_Cousera_Confusion-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-RN_Coursera_Confusion-tvOS/Pods-RN_Coursera_Confusion-tvOS-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -572,7 +599,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RN_Cousera_Confusion/Pods-RN_Cousera_Confusion-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RN_Coursera_Confusion-tvOS/Pods-RN_Coursera_Confusion-tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBBFFF53921753CEF77E722D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RN_Coursera_Confusion-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -620,7 +669,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* RN_Cousera_ConfusionTests.m in Sources */,
+				00E356F31AD99517003FC87E /* RN_Coursera_ConfusionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,7 +695,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* RN_Cousera_ConfusionTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* RN_Coursera_ConfusionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,12 +704,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* RN_Cousera_Confusion */;
+			target = 13B07F861A680F5B00A75B9A /* RN_Coursera_Confusion */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* RN_Cousera_Confusion-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* RN_Coursera_Confusion-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -672,7 +721,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = RN_Cousera_Confusion;
+			path = RN_Coursera_Confusion;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -680,14 +729,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 802376F78AA9EC9437F043D0 /* Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.debug.xcconfig */;
+			baseConfigurationReference = 7A48F88C68AC56229C022260 /* Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = RN_Cousera_ConfusionTests/Info.plist;
+				INFOPLIST_FILE = RN_Coursera_ConfusionTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -697,17 +746,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RN_Cousera_Confusion.app/RN_Cousera_Confusion";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RN_Coursera_Confusion.app/RN_Coursera_Confusion";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61E86E8E43C7E1B54B107FD4 /* Pods-RN_Cousera_Confusion-RN_Cousera_ConfusionTests.release.xcconfig */;
+			baseConfigurationReference = A364C0ECE3F92455ACDF250D /* Pods-RN_Coursera_Confusion-RN_Coursera_ConfusionTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = RN_Cousera_ConfusionTests/Info.plist;
+				INFOPLIST_FILE = RN_Coursera_ConfusionTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -717,13 +766,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RN_Cousera_Confusion.app/RN_Cousera_Confusion";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RN_Coursera_Confusion.app/RN_Coursera_Confusion";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6788E5BCCC53A5DEBD714ECD /* Pods-RN_Cousera_Confusion.debug.xcconfig */;
+			baseConfigurationReference = 473283454469B6D69F31D5AA /* Pods-RN_Coursera_Confusion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -733,7 +782,7 @@
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = RN_Cousera_Confusion/Info.plist;
+				INFOPLIST_FILE = RN_Coursera_Confusion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -741,7 +790,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = RN_Cousera_Confusion;
+				PRODUCT_NAME = RN_Coursera_Confusion;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -750,12 +799,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF8D3A7D4756BDEE67D51B01 /* Pods-RN_Cousera_Confusion.release.xcconfig */;
+			baseConfigurationReference = 4F99E5DC6C63ADF2FEBE5937 /* Pods-RN_Coursera_Confusion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = RN_Cousera_Confusion/Info.plist;
+				INFOPLIST_FILE = RN_Coursera_Confusion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -763,7 +812,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = RN_Cousera_Confusion;
+				PRODUCT_NAME = RN_Coursera_Confusion;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -771,7 +820,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B066B92140C96579FFF6FE8B /* Pods-RN_Cousera_Confusion-tvOS.debug.xcconfig */;
+			baseConfigurationReference = F25CCA4F79E0CACE59DA98A9 /* Pods-RN_Coursera_Confusion-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -782,14 +831,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "RN_Cousera_Confusion-tvOS/Info.plist";
+				INFOPLIST_FILE = "RN_Coursera_Confusion-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RN_Cousera_Confusion-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RN_Coursera_Confusion-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -799,7 +848,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D32AE2F28739376C6E6CE1E0 /* Pods-RN_Cousera_Confusion-tvOS.release.xcconfig */;
+			baseConfigurationReference = 99FDF94C3DA2CE03285C44A6 /* Pods-RN_Coursera_Confusion-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -810,14 +859,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "RN_Cousera_Confusion-tvOS/Info.plist";
+				INFOPLIST_FILE = "RN_Coursera_Confusion-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RN_Cousera_Confusion-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RN_Coursera_Confusion-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -827,7 +876,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31190B7395E2D66A17DDE48C /* Pods-RN_Cousera_Confusion-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 0443A359FA0BFA6D452D8849 /* Pods-RN_Coursera_Confusion-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -837,24 +886,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "RN_Cousera_Confusion-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "RN_Coursera_Confusion-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RN_Cousera_Confusion-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RN_Coursera_Confusion-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RN_Cousera_Confusion-tvOS.app/RN_Cousera_Confusion-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RN_Coursera_Confusion-tvOS.app/RN_Coursera_Confusion-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D57E5AB1C559C50EFF36DC1 /* Pods-RN_Cousera_Confusion-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = D7AEE418B008458C28840922 /* Pods-RN_Coursera_Confusion-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -864,17 +913,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "RN_Cousera_Confusion-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "RN_Coursera_Confusion-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RN_Cousera_Confusion-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RN_Coursera_Confusion-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RN_Cousera_Confusion-tvOS.app/RN_Cousera_Confusion-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RN_Coursera_Confusion-tvOS.app/RN_Coursera_Confusion-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -995,7 +1044,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RN_Cousera_ConfusionTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RN_Coursera_ConfusionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1004,7 +1053,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RN_Cousera_Confusion" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RN_Coursera_Confusion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1013,7 +1062,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RN_Cousera_Confusion-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RN_Coursera_Confusion-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1022,7 +1071,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RN_Cousera_Confusion-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RN_Coursera_Confusion-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1031,7 +1080,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RN_Cousera_Confusion" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RN_Coursera_Confusion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

@@ -1,4 +1,4 @@
-package com.rn_cousera_confusion;
+package com.rn_coursera_confusion;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "RN_Cousera_Confusion";
+    return "RN_Coursera_Confusion";
   }
 }
