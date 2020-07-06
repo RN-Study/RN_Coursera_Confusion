@@ -5,11 +5,6 @@ import {DISHES} from '../shared/dishes';
 
 const Menu = (props) => {
   const [dishes, setDishes] = useState(DISHES);
-  const [selectedDish, setSelectedDish] = useState(null);
-
-  const onDishSelect = (dishId) => {
-    setSelectedDish(dishId);
-  };
 
   const {navigate} = props.navigation;
 
