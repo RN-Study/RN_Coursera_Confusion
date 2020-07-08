@@ -28,15 +28,9 @@ const Home = () => {
 
   return (
     <ScrollView>
-      <RenderItem
-        item={dishes.filter((dish) => dish.featured)[0]}
-      />
-      <RenderItem
-        item={promotions.filter((promo) => promo.featured)[0]}
-      />
-      <RenderItem
-        item={leaders.filter((leader) => leader.featured)[0]}
-      />
+      <RenderItem item={dishes.filter((dish) => dish.featured)[0]} />
+      <RenderItem item={promotions.filter((promo) => promo.featured)[0]} />
+      <RenderItem item={leaders.filter((leader) => leader.featured)[0]} />
     </ScrollView>
   );
 };
