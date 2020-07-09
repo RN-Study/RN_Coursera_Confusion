@@ -4,7 +4,7 @@ import {ListItem} from 'react-native-elements';
 import {DISHES} from '../shared/dishes';
 
 const Menu = (props) => {
-  const [dishes, setDishes] = useState(DISHES);
+  const [dishes] = useState(DISHES);
 
   const {navigate} = props.navigation;
 

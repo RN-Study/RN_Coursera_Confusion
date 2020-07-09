@@ -6,9 +6,9 @@ import {PROMOTIONS} from '../shared/promotions';
 import {LEADERS} from '../shared/leaders';
 
 const Home = () => {
-  const [dishes, setDishes] = useState(DISHES);
-  const [promotions, setPromotions] = useState(PROMOTIONS);
-  const [leaders, setLeaders] = useState(LEADERS);
+  const [dishes] = useState(DISHES);
+  const [promotions] = useState(PROMOTIONS);
+  const [leaders] = useState(LEADERS);
 
   const RenderItem = (props) => {
     const item = props.item;
