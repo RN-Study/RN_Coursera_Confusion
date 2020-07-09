@@ -1,17 +1,22 @@
-import React, {Component, useState} from 'react';
-import {View, StyleSheet, FlatList, Text, ScrollView} from 'react-native';
+import React, {useState} from 'react';
+import {View, FlatList, Text} from 'react-native';
 import {Card, Icon} from 'react-native-elements';
-import {DISHES} from '../shared/dishes';
-import {COMMENTS} from '../shared/comments';
+import {connect} from 'react-redux';
+import {baseURL} from '../shared/baseURL';
+
+const mapStateToProps = (state) => {
+  return {
+    dishes: state.dishes,
+    comments: state.comments,
+  };
+};
 
 export const RenderDish = (props) => {
   const dish = props.dish;
 
   if (dish != null) {
     return (
-      <Card
-        featuredTitle={dish.name}
-        image={require('../assets/images/uthappizza.png')}>
+      <Card featuredTitle={dish.name} image={{uri: baseURL + dish.image}}>
         <Text style={{margin: 10}}> {dish.description} </Text>
         <Icon
           raised={true}
@@ -55,8 +60,8 @@ export const RenderComments = (props) => {
 };
 
 const DishDetail = (props) => {
-  const [dishes] = useState(DISHES);
-  const [comments] = useState(COMMENTS);
+  // const [dishes] = useState(DISHES);
+  // const [comments] = useState(COMMENTS);
   const [favorites, setFavorites] = useState([]);
   const {dishId} = props.route.params;
 
@@ -68,16 +73,16 @@ const DishDetail = (props) => {
     // <ScrollView>
     <View>
       <RenderDish
-        dish={dishes[+dishId]}
+        dish={props.dishes[+dishId]}
         favorite={favorites.some((el) => el === dishId)}
         onPress={() => markFavorite(dishId)}
       />
       <RenderComments
-        comments={comments.filter((comment) => comment.dishId === dishId)}
+        comments={props.comments.filter((comment) => comment.dishId === dishId)}
       />
     </View>
     // </ScrollView>
   );
 };
 
-export default DishDetail;
+export default connect(mapStateToProps)(DishDetail);

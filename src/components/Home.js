@@ -1,15 +1,18 @@
 import React, {Component, useState} from 'react';
 import {View, StyleSheet, ScrollView, Text} from 'react-native';
-import {DISHES} from '../shared/dishes';
 import {Card} from 'react-native-elements';
-import {PROMOTIONS} from '../shared/promotions';
-import {LEADERS} from '../shared/leaders';
+import {connect} from 'react-redux';
+import {baseURL} from '../shared/baseURL';
 
-const Home = () => {
-  const [dishes] = useState(DISHES);
-  const [promotions] = useState(PROMOTIONS);
-  const [leaders] = useState(LEADERS);
+const mapStateToProps = (state) => {
+  return {
+    dishes: state.dishes,
+    promotions: state.promotions,
+    leaders: state.leaders,
+  };
+};
 
+const Home = (props) => {
   const RenderItem = (props) => {
     const item = props.item;
     if (item != null) {
@@ -17,7 +20,7 @@ const Home = () => {
         <Card
           featuredTitle={item.name}
           featuredSubtitle={item.designation}
-          image={require('../assets/images/uthappizza.png')}>
+          image={{uri: baseURL + item.image}}>
           <Text style={{margin: 10}}> {item.description} </Text>
         </Card>
       );
@@ -28,12 +31,16 @@ const Home = () => {
 
   return (
     <ScrollView>
-      <RenderItem item={dishes.filter((dish) => dish.featured)[0]} />
-      <RenderItem item={promotions.filter((promo) => promo.featured)[0]} />
-      <RenderItem item={leaders.filter((leader) => leader.featured)[0]} />
+      <RenderItem item={props.dishes.filter((dish) => dish.featured)[0]} />
+      <RenderItem
+        item={props.promotions.promotions.filter((promo) => promo.featured)[0]}
+      />
+      <RenderItem
+        item={props.leaders.leaders.filter((leader) => leader.featured)[0]}
+      />
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({});
-export default Home;
+export default connect(mapStateToProps)(Home);

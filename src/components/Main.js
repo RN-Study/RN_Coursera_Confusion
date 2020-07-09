@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import {
   View,
   StyleSheet,
@@ -15,13 +15,31 @@ import DishDetail from './DishDetail';
 import {createStackNavigator} from '@react-navigation/stack';
 import {
   createDrawerNavigator,
-  DrawerItem,
   DrawerItemList,
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
 import Home from './Home';
 import AboutScreen from './AboutScreen';
 import ContactScreen from './ContactScreen';
+
+import {connect} from 'react-redux';
+import {
+  fetchDishes,
+  fetchComments,
+  fetchLeaders,
+  fetchPromos,
+} from '../redux/ActionCreators';
+
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchDishes: () => dispatch(fetchDishes()),
+  fetchComments: () => dispatch(fetchComments()),
+  fetchPromos: () => dispatch(fetchPromos()),
+  fetchLeaders: () => dispatch(fetchLeaders()),
+});
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -252,6 +270,13 @@ export const MainNavigator = () => {
 };
 
 const Main = (props) => {
+  useEffect(() => {
+    fetchLeaders();
+    fetchPromos();
+    fetchComments();
+    fetchDishes();
+  }, []);
+
   return (
     <View style={{flex: 1}}>
       <StatusBar barStyle="dark-content" />
@@ -286,4 +311,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Main;
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

@@ -1,6 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 export const dishes = (
-  state = {isLoading: true, errMessage: null, dishes: []},
+  state = {isLoading: true, errorMessage: null, dishes: []},
   action,
 ) => {
   switch (action.type) {
@@ -8,16 +8,16 @@ export const dishes = (
       return {
         ...state,
         isLoading: false,
-        errMessage: null,
+        errorMessage: null,
         dishes: action.payload,
       };
     case ActionTypes.DISHES_LOADING:
-      return {...state, isLoading: true, errMessage: null, dishes: []};
+      return {...state, isLoading: true, errorMessage: null, dishes: []};
     case ActionTypes.DISHES_FAILED:
       return {
         ...state,
         isLoading: false,
-        errMessage: action.payload,
+        errorMessage: action.payload,
         dishes: [],
       };
     default:

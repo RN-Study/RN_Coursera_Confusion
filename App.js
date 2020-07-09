@@ -7,29 +7,20 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {StyleSheet} from 'react-native';
 import Main from './src/components/Main';
 import {NavigationContainer} from '@react-navigation/native';
+import {Provider} from 'react-redux';
+import {ConfigureStore} from './src/redux/configureStore';
+
+const store = ConfigureStore();
 
 const App: () => React$Node = () => {
   return (
     <NavigationContainer>
-      <Main />
+      <Provider store={store}>
+        <Main />
+      </Provider>
     </NavigationContainer>
   );
 };

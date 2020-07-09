@@ -1,47 +1,50 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Text, FlatList, ScrollView, SafeAreaView} from 'react-native';
+import {View, StyleSheet, Text, FlatList, SafeAreaView} from 'react-native';
 import {Card, ListItem} from 'react-native-elements';
-import {HISTORY} from "../shared/history";
-import {LEADERS} from "../shared/leaders";
+import {HISTORY} from '../shared/history';
+import {connect} from 'react-redux';
+import {baseURL} from '../shared/baseURL';
 
-const AboutScreen = () => {
-	const [history, setHistory] = useState(HISTORY);
-	const [leaders, setLeaders] = useState(LEADERS);
+const mapStateToProps = (state) => {
+  return {
+    leaders: state.leaders,
+  };
+};
 
-	const renderListItem = ({item, index}) => {
-		return (
-			<ListItem
-				key={index}
-				title={item.name}
-				subtitle={
-					<View>
-						<Text style={{color: 'gray'}}>{item.description}</Text>
-					</View>
-				}
-				leftAvatar={{source: require('../assets/images/alberto.png')}}
-			/>
-		);
-	};
+const AboutScreen = (props) => {
+  const [history] = useState(HISTORY);
+  // const [leaders] = useState(LEADERS);
 
-	return (
-		<SafeAreaView style={{flex: 1}}>
-			<Card
-				title={'Our History'}
-			>
-				<Text style={{}}> {history} </Text>
-			</Card>
+  const renderLeaderItem = ({item, index}) => {
+    return (
+      <ListItem
+        key={index}
+        title={item.name}
+        subtitle={
+          <View>
+            <Text style={{color: 'gray'}}>{item.description}</Text>
+          </View>
+        }
+        leftAvatar={{source: {uri: baseURL + item.image}}}
+      />
+    );
+  };
 
-			<Card containerStyle={{flex:1}} title={'Corporate Leadership'}>
-					<FlatList
+  return (
+    <SafeAreaView style={{flex: 1}}>
+      <Card title={'Our History'}>
+        <Text style={{}}> {history} </Text>
+      </Card>
 
-						data={leaders}
-						renderItem={renderListItem}
-						keyExtractor={(item) => item.id.toString()}
-					/>
-			</Card>
-
-		</SafeAreaView>
-	);
+      <Card containerStyle={{flex: 1}} title={'Corporate Leadership'}>
+        <FlatList
+          data={props.leaders}
+          renderItem={renderLeaderItem}
+          keyExtractor={(item) => item.id.toString()}
+        />
+      </Card>
+    </SafeAreaView>
+  );
 };
 const styles = StyleSheet.create({});
-export default AboutScreen;
+export default connect(mapStateToProps)(AboutScreen);
