@@ -2,15 +2,12 @@ import * as ActionTypes from './ActionTypes';
 import {baseURL} from '../shared/baseURL';
 
 export const fetchComments = () => (dispatch) => {
-  console.log('___ Fetch Comments ___');
   return fetch(baseURL + 'comments')
     .then(
       (response) => {
         if (response.ok) {
-          console.log('___ Fetch Oki ___');
           return response;
         } else {
-          console.log('___ Fetch Error ___');
           var error = new Error(
             'Error' + response.status + ':' + response.statusText,
           );
@@ -39,7 +36,6 @@ export const addComments = (comments) => ({
 });
 
 export const fetchDishes = () => (dispatch) => {
-  console.log('___ Fetch Dishes ___');
   dispatch(dishesLoading());
   return fetch(baseURL + 'dishes')
     .then(
@@ -79,7 +75,6 @@ export const addDishes = (dishes) => ({
 });
 
 export const fetchPromos = () => (dispatch) => {
-  console.log('___ Fetch  Promos ___');
   dispatch(promosLoading());
   return fetch(baseURL + 'promotions')
     .then(
@@ -119,7 +114,6 @@ export const addPromos = (promotions) => ({
 });
 
 export const fetchLeaders = () => (dispatch) => {
-  console.log('___ Dishes Leaders ___');
   dispatch(leadersLoading());
 
   return fetch(baseURL + 'leaders')
@@ -157,4 +151,14 @@ export const leadersFailed = (errorMessage) => ({
 export const addLeaders = (leaders) => ({
   type: ActionTypes.ADD_LEADERS,
   payload: leaders,
+});
+
+export const postFavorite = (dishId) => (dispatch) => {
+  setTimeout(() => {
+    dispatch(addFavorite(dishId));
+  }, 2000);
+};
+export const addFavorite = (dishId) => ({
+  type: ActionTypes.ADD_FAVORITE,
+  payload: dishId,
 });
