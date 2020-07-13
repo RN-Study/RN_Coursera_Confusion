@@ -73,12 +73,14 @@ const DishDetail = (props) => {
     // <ScrollView>
     <View>
       <RenderDish
-        dish={props.dishes[+dishId]}
+        dish={props.dishes.dishes[+dishId]}
         favorite={favorites.some((el) => el === dishId)}
         onPress={() => markFavorite(dishId)}
       />
       <RenderComments
-        comments={props.comments.filter((comment) => comment.dishId === dishId)}
+        comments={props.comments.comments.filter(
+          (comment) => comment.dishId === dishId,
+        )}
       />
     </View>
     // </ScrollView>

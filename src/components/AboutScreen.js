@@ -38,7 +38,7 @@ const AboutScreen = (props) => {
 
       <Card containerStyle={{flex: 1}} title={'Corporate Leadership'}>
         <FlatList
-          data={props.leaders}
+          data={props.leaders.leaders}
           renderItem={renderLeaderItem}
           keyExtractor={(item) => item.id.toString()}
         />

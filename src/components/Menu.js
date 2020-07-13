@@ -3,7 +3,6 @@ import {View, StyleSheet, FlatList} from 'react-native';
 import {ListItem, Tile} from 'react-native-elements';
 import {connect} from 'react-redux';
 import {baseURL} from '../shared/baseURL';
-import {dishes} from '../redux/dishes';
 
 const mapStateToProps = (state) => {
   return {
@@ -31,7 +30,7 @@ const Menu = (props) => {
   };
   return (
     <FlatList
-      data={props.dishes}
+      data={props.dishes.dishes}
       renderItem={renderMenuItem}
       keyExtractor={(item) => item.id.toString()}
     />

@@ -31,7 +31,12 @@ import {
 } from '../redux/ActionCreators';
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    dishes: state.dishes,
+    comments: state.comments,
+    promotions: state.promotions,
+    leaders: state.leaders,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -197,7 +202,7 @@ export const CustomDrawerContent = (props) => {
     </DrawerContentScrollView>
   );
 };
-export const MainNavigator = () => {
+export const MainNavigator = (props) => {
   return (
     <Drawer.Navigator
       initialRouteName={'Home'}
@@ -271,10 +276,10 @@ export const MainNavigator = () => {
 
 const Main = (props) => {
   useEffect(() => {
-    fetchLeaders();
-    fetchPromos();
-    fetchComments();
-    fetchDishes();
+    props.fetchDishes();
+    props.fetchLeaders();
+    props.fetchPromos();
+    props.fetchComments();
   }, []);
 
   return (

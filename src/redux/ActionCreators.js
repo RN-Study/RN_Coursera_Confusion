@@ -2,13 +2,15 @@ import * as ActionTypes from './ActionTypes';
 import {baseURL} from '../shared/baseURL';
 
 export const fetchComments = () => (dispatch) => {
+  console.log('___ Fetch Comments ___');
   return fetch(baseURL + 'comments')
     .then(
       (response) => {
-        console.log('fetchComments: '`${response}`);
         if (response.ok) {
+          console.log('___ Fetch Oki ___');
           return response;
         } else {
+          console.log('___ Fetch Error ___');
           var error = new Error(
             'Error' + response.status + ':' + response.statusText,
           );
@@ -37,11 +39,11 @@ export const addComments = (comments) => ({
 });
 
 export const fetchDishes = () => (dispatch) => {
+  console.log('___ Fetch Dishes ___');
   dispatch(dishesLoading());
   return fetch(baseURL + 'dishes')
     .then(
       (response) => {
-        console.log('fetchDishes: '`${response}`);
         if (response.ok) {
           return response;
         } else {
@@ -62,9 +64,9 @@ export const fetchDishes = () => (dispatch) => {
     .catch((error) => dispatch(dishesFailed(error.message)));
 };
 
-export const dishesLoading = () => {
-  type: ActionTypes.DISHES_LOADING;
-};
+export const dishesLoading = () => ({
+  type: ActionTypes.DISHES_LOADING,
+});
 
 export const dishesFailed = (errorMessage) => ({
   type: ActionTypes.DISHES_FAILED,
@@ -77,6 +79,7 @@ export const addDishes = (dishes) => ({
 });
 
 export const fetchPromos = () => (dispatch) => {
+  console.log('___ Fetch  Promos ___');
   dispatch(promosLoading());
   return fetch(baseURL + 'promotions')
     .then(
@@ -101,9 +104,9 @@ export const fetchPromos = () => (dispatch) => {
     .catch((error) => dispatch(promosFailed(error.message)));
 };
 
-export const promosLoading = () => {
-  type: ActionTypes.PROMOS_LOADING;
-};
+export const promosLoading = () => ({
+  type: ActionTypes.PROMOS_LOADING,
+});
 
 export const promosFailed = (errorMessage) => ({
   type: ActionTypes.PROMOS_FAILED,
@@ -116,6 +119,7 @@ export const addPromos = (promotions) => ({
 });
 
 export const fetchLeaders = () => (dispatch) => {
+  console.log('___ Dishes Leaders ___');
   dispatch(leadersLoading());
 
   return fetch(baseURL + 'leaders')
@@ -141,9 +145,9 @@ export const fetchLeaders = () => (dispatch) => {
     .catch((error) => dispatch(leadersFailed(error.message)));
 };
 
-export const leadersLoading = () => {
-  type: ActionTypes.LEADERS_LOADING;
-};
+export const leadersLoading = () => ({
+  type: ActionTypes.LEADERS_LOADING,
+});
 
 export const leadersFailed = (errorMessage) => ({
   type: ActionTypes.LEADERS_FAILED,

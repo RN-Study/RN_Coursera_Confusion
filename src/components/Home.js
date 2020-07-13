@@ -7,12 +7,14 @@ import {baseURL} from '../shared/baseURL';
 const mapStateToProps = (state) => {
   return {
     dishes: state.dishes,
+    comments: state.comments,
     promotions: state.promotions,
     leaders: state.leaders,
   };
 };
 
 const Home = (props) => {
+  console.log(props.dishes);
   const RenderItem = (props) => {
     const item = props.item;
     if (item != null) {
@@ -28,10 +30,10 @@ const Home = (props) => {
       return <View />;
     }
   };
-
+  const DISHES = props.dishes.dishes;
   return (
     <ScrollView>
-      <RenderItem item={props.dishes.filter((dish) => dish.featured)[0]} />
+      <RenderItem item={DISHES.filter((dish) => dish.featured)[0]} />
       <RenderItem
         item={props.promotions.promotions.filter((promo) => promo.featured)[0]}
       />
