@@ -12,7 +12,6 @@
   "dependencies": {
     "@react-native-community/datetimepicker": "^2.6.0",
     "@react-native-community/masked-view": "^0.1.10",
-    "@react-native-community/picker": "^1.6.5",
     "@react-native-community/toolbar-android": "^0.1.0-rc.2",
     "@react-navigation/drawer": "^5.8.4",
     "@react-navigation/native": "^5.6.1",

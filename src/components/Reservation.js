@@ -7,16 +7,17 @@ import {
   Switch,
   Button,
   Platform,
+  TouchableOpacity,
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
-import {Picker} from '@react-native-community/picker';
 import RNDateTimePicker from '@react-native-community/datetimepicker';
 import {getCurrentDate, getCurrentTime} from './GetCurrentTime';
+import moment from 'moment';
 
 const Reservation = () => {
   const [guests, setGuests] = useState(1);
   const [smoking, setSmoking] = useState(false);
-  const [date, setDate] = useState(new Date('2020-07-15T09:21:42'));
+  const [date, setDate] = useState(new Date('2020-07-15T09:21:42+07:00'));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
   const inputRefs = useRef({});
@@ -25,17 +26,17 @@ const Reservation = () => {
     console.log(JSON.stringify({guests, smoking, date}));
     setGuests(1);
     setSmoking(false);
-    setDate('');
+    setDate(date);
   };
   const showMode = (currentMode) => {
     setShow(true);
     setMode(currentMode);
   };
-  const showDatePicker = () => {
-    showMode('date');
+  const showDatePicker = (value) => {
+    showMode(value);
   };
-  const showTimePicker = () => {
-    showMode('time');
+  const showTimePicker = (value) => {
+    showMode(value);
   };
   return (
     <ScrollView>
@@ -48,7 +49,7 @@ const Reservation = () => {
             value: 1,
           }}
           value={guests}
-          useNativeAndroidPickerStyle={false} //android only
+          useNativeAndroidPickerStyle={Platform.OS === 'ios' ? true : false} //android only
           hideIcon={true}
           onUpArrow={() => {
             inputRefs.name.focus();
@@ -90,10 +91,47 @@ const Reservation = () => {
         <View
           style={[
             styles.formItem,
-            {flex: 2, flexDirection: 'row', justifyContent: 'space-around'},
+            {flex: 3, flexDirection: 'row', justifyContent: 'space-around'},
           ]}>
-          <Button title={getCurrentDate()} onPress={showDatePicker} />
-          <Button title={getCurrentTime()} onPress={showTimePicker} />
+          {/*<Button title={moment(date).format()} onPress={showDatePicker} />*/}
+          {/*<Button*/}
+          {/*  title={moment(date, 'hh:mm:ss').format('hh:mm:ss')}*/}
+          {/*  onPress={showTimePicker}*/}
+          {/*/>*/}
+          {Platform.OS === 'ios' ? (
+            <TouchableOpacity
+              onPress={() => {
+                showDatePicker('datetime');
+              }}>
+              <Text style={{fontSize: 16, color: 'gray'}}>
+                {moment(date).format()}
+              </Text>
+            </TouchableOpacity>
+          ) : (
+            <View
+              style={{
+                flex: 3,
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  showDatePicker('date');
+                }}>
+                <Text style={{fontSize: 16, color: 'gray'}}>
+                  {moment(date).format('YYYY-MM-DD')}
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  showDatePicker('date');
+                }}>
+                <Text style={{fontSize: 16, color: 'gray'}}>
+                  {moment(date).format('Thh:mm:ss+')}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          )}
         </View>
       </View>
       <View style={{flex: 1}}>
@@ -106,10 +144,12 @@ const Reservation = () => {
             minimumDate={new Date(2017, 1, 1)}
             maximumDate={new Date()}
             is24Hour={true}
-            onChange={(event, selectedDate) => {
-              const currentDate = selectedDate || date;
-              setShow(Platform.OS === 'ios');
-              setDate(currentDate);
+            onChange={(event, value) => {
+              // const currentDate = selectedDate || date;
+              setShow(false);
+              if (value) {
+                setDate(value);
+              }
             }}
           />
         )}

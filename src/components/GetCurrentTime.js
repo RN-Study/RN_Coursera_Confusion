@@ -13,3 +13,8 @@ export const getCurrentTime = () => {
   var sec = moment(new Date().getSeconds(), 'ss').format('ss');
   return 'T' + hours + ':' + min + ':' + sec;
 };
+
+export const getTimeZone = () => {
+  var timezone = new Date().getTimezoneOffset() / -60;
+  return timezone;
+};
