@@ -4,6 +4,7 @@ import {Card} from 'react-native-elements';
 import {connect} from 'react-redux';
 import {baseURL} from '../shared/baseURL';
 import Loading from './Loading';
+import {promotions} from '../redux/promotions';
 
 const mapStateToProps = (state) => {
   return {
@@ -41,6 +42,7 @@ const Home = (props) => {
     }
   };
   const DISHES = props.dishes.dishes;
+
   return (
     <ScrollView>
       <RenderItem
