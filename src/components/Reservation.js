@@ -1,24 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   View,
   StyleSheet,
   Text,
   ScrollView,
   Switch,
-  Modal,
   Button,
   Platform,
 } from 'react-native';
+import RNPickerSelect from 'react-native-picker-select';
 import {Picker} from '@react-native-community/picker';
-import {Card} from 'react-native-elements';
 import RNDateTimePicker from '@react-native-community/datetimepicker';
-import DatePicker from 'react-native-datepicker';
-import DropDownPicker from 'react-native-dropdown-picker';
+import {getCurrentDate, getCurrentTime} from './GetCurrentTime';
 
 const Reservation = () => {
   const [guests, setGuests] = useState(1);
   const [smoking, setSmoking] = useState(false);
   const [date, setDate] = useState(new Date('2020-07-15T09:21:42'));
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(false);
+  const inputRefs = useRef({});
 
   const handleReservation = () => {
     console.log(JSON.stringify({guests, smoking, date}));
@@ -26,48 +27,48 @@ const Reservation = () => {
     setSmoking(false);
     setDate('');
   };
-
+  const showMode = (currentMode) => {
+    setShow(true);
+    setMode(currentMode);
+  };
+  const showDatePicker = () => {
+    showMode('date');
+  };
+  const showTimePicker = () => {
+    showMode('time');
+  };
   return (
     <ScrollView>
       <View style={styles.formRow}>
         <Text style={styles.formLabel}> Number of Guests </Text>
-        <Picker
-          style={styles.formItem}
-          selectedValue={guests}
-          mode={'dropdown'}
-          onValueChange={(itemValue, itemIndex) => setGuests(itemValue)}>
-          <Picker.Item label={'1'} value={'1'} />
-          <Picker.Item label={'2'} value={'2'} />
-          <Picker.Item label={'3'} value={'3'} />
-          <Picker.Item label={'4'} value={'4'} />
-          <Picker.Item label={'5'} value={'5'} />
-          <Picker.Item label={'6'} value={'6'} />
-        </Picker>
-        {/*<DropDownPicker*/}
-        {/*  style={styles.formItem}*/}
-        {/*  containerStyle={{*/}
-        {/*    height: 40,*/}
-        {/*    width: '50%',*/}
-        {/*  }}*/}
-        {/*  dropDownStyle={{*/}
-        {/*    backgroundColor: 'tomato',*/}
-        {/*    marginTop: 10,*/}
-        {/*  }}*/}
-        {/*  activeItemStyle={{*/}
-        {/*    justifyContent: 'center',*/}
-        {/*  }}*/}
-        {/*  activeLabelStyle={{color: 'blue'}}*/}
-        {/*  items={[*/}
-        {/*    {label: '1', value: '1'},*/}
-        {/*    {label: '2', value: '2'},*/}
-        {/*    {label: '3', value: '3'},*/}
-        {/*    {label: '4', value: '4'},*/}
-        {/*    {label: '5', value: '5'},*/}
-        {/*    {label: '6', value: '6'},*/}
-        {/*  ]}*/}
-        {/*  // defaultValue={'1'}*/}
-        {/*  onChangeItem={(item) => setGuests(item.value)}*/}
-        {/*/>*/}
+        <RNPickerSelect
+          style={pickerSelectStyles}
+          placeholder={{
+            label: 'Select an item',
+            value: 1,
+          }}
+          value={guests}
+          useNativeAndroidPickerStyle={false} //android only
+          hideIcon={true}
+          onUpArrow={() => {
+            inputRefs.name.focus();
+          }}
+          onDownArrow={() => {
+            inputRefs.picker2.togglePicker();
+          }}
+          ref={(el) => {
+            inputRefs.picker2 = el;
+          }}
+          items={[
+            {label: '1', value: '1'},
+            {label: '2', value: '2'},
+            {label: '3', value: '3'},
+            {label: '4', value: '4'},
+            {label: '5', value: '5'},
+            {label: '6', value: '6'},
+          ]}
+          onValueChange={(value) => setGuests(value)}
+        />
       </View>
       <View style={styles.formRow}>
         <Text style={styles.formLabel}> Smoking/Non-Smoking? </Text>
@@ -86,37 +87,32 @@ const Reservation = () => {
       </View>
       <View style={styles.formRow}>
         <Text style={styles.formLabel}> Date and Time </Text>
-        {/*<DatePicker*/}
-        {/*  style={{flex: 4, marginRight: 5}}*/}
-        {/*  date={date}*/}
-        {/*  format={''}*/}
-        {/*  mode={'datetime'}*/}
-        {/*  placeholder={'select date and time'}*/}
-        {/*  minDate={'2017-01-01'}*/}
-        {/*  confirmBtnText={'Confirm'}*/}
-        {/*  cancelBtnText={'Cancel'}*/}
-        {/*  customStyles={{*/}
-        {/*    dateIcon: {*/}
-        {/*      position: 'absolute',*/}
-        {/*      left: 0,*/}
-        {/*      top: 4,*/}
-        {/*      marginLeft: 0,*/}
-        {/*    },*/}
-        {/*    dateInput: {*/}
-        {/*      marginLeft: 35,*/}
-        {/*    },*/}
-        {/*  }}*/}
-        {/*  onDateChange={(date) => setDate(date)}*/}
-        {/*/>*/}
-        <RNDateTimePicker
-          style={{flex: 3, marginLeft: 0}}
-          value={date}
-          mode={Platform.OS === 'ios' ? 'datetime' : 'date'}
-          display={'default'}
-          minimumDate={new Date(2017, 1, 1)}
-          maximumDate={new Date()}
-          onChange={(event, date) => setDate(date)}
-        />
+        <View
+          style={[
+            styles.formItem,
+            {flex: 2, flexDirection: 'row', justifyContent: 'space-around'},
+          ]}>
+          <Button title={getCurrentDate()} onPress={showDatePicker} />
+          <Button title={getCurrentTime()} onPress={showTimePicker} />
+        </View>
+      </View>
+      <View style={{flex: 1}}>
+        {show && (
+          <RNDateTimePicker
+            style={{flex: 3, marginLeft: 0}}
+            value={date}
+            mode={mode}
+            display={'default'}
+            minimumDate={new Date(2017, 1, 1)}
+            maximumDate={new Date()}
+            is24Hour={true}
+            onChange={(event, selectedDate) => {
+              const currentDate = selectedDate || date;
+              setShow(Platform.OS === 'ios');
+              setDate(currentDate);
+            }}
+          />
+        )}
       </View>
       <View style={styles.formRow}>
         <Button
@@ -146,6 +142,31 @@ const styles = StyleSheet.create({
     flex: 1,
     // height: 30,
     // backgroundColor: 'tomato',
+  },
+});
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+    flex: 1,
+    fontSize: 16,
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 4,
+    color: 'black',
+    paddingRight: 30, // to ensure the text is never behind the icon
+  },
+  inputAndroid: {
+    flex: 1,
+    fontSize: 16,
+    justifyContent: 'center',
+    paddingHorizontal: 40,
+    paddingVertical: 10,
+    borderWidth: 0.5,
+    borderColor: 'gray',
+    borderRadius: 8,
+    color: 'black',
+    paddingRight: 30, // to ensure the text is never behind the icon
   },
 });
 export default Reservation;
