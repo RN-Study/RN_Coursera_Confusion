@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import RNDateTimePicker from '@react-native-community/datetimepicker';
-import {getCurrentDate, getCurrentTime} from './GetCurrentTime';
 import moment from 'moment';
+import {Icon} from 'react-native-elements';
 
 const Reservation = () => {
   const [guests, setGuests] = useState(1);
@@ -20,13 +20,14 @@ const Reservation = () => {
   const [date, setDate] = useState(new Date('2020-07-15T09:21:42+07:00'));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
-  const inputRefs = useRef({});
+  const inputRefs = useRef({guests: null});
 
   const handleReservation = () => {
     console.log(JSON.stringify({guests, smoking, date}));
     setGuests(1);
     setSmoking(false);
     setDate(date);
+    setShow(false);
   };
   const showMode = (currentMode) => {
     setShow(true);
@@ -43,23 +44,40 @@ const Reservation = () => {
       <View style={styles.formRow}>
         <Text style={styles.formLabel}> Number of Guests </Text>
         <RNPickerSelect
-          style={pickerSelectStyles}
+          style={{
+            ...pickerSelectStyles,
+            iconContainer: {
+              // top: Platform.OS === 'ios' ? 7 : 7,
+              // right: 6,
+              paddingRight: 10,
+              paddingVertical: 7,
+            },
+          }}
           placeholder={{
             label: 'Select an item',
-            value: 1,
+            value: 0,
           }}
           value={guests}
           useNativeAndroidPickerStyle={Platform.OS === 'ios' ? true : false} //android only
-          hideIcon={true}
+          Icon={() => {
+            return (
+              <Icon
+                name={'md-arrow-down'}
+                type={'ionicon'}
+                size={24}
+                color={'gray'}
+              />
+            );
+          }}
           onUpArrow={() => {
-            inputRefs.name.focus();
+            inputRefs.guests.focus();
           }}
           onDownArrow={() => {
-            inputRefs.picker2.togglePicker();
+            inputRefs.guests.togglePicker();
           }}
-          ref={(el) => {
-            inputRefs.picker2 = el;
-          }}
+          // ref={(el) => {
+          //   inputRefs.guests = el;
+          // }}
           items={[
             {label: '1', value: '1'},
             {label: '2', value: '2'},
@@ -112,7 +130,7 @@ const Reservation = () => {
               style={{
                 flex: 3,
                 flexDirection: 'row',
-                justifyContent: 'space-around',
+                // justifyContent: 'space-around',
               }}>
               <TouchableOpacity
                 onPress={() => {
@@ -124,10 +142,10 @@ const Reservation = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  showDatePicker('date');
+                  showTimePicker('time');
                 }}>
                 <Text style={{fontSize: 16, color: 'gray'}}>
-                  {moment(date).format('Thh:mm:ss+')}
+                  {moment(date).format('Thh:mm:ssZ')}
                 </Text>
               </TouchableOpacity>
             </View>
@@ -145,7 +163,6 @@ const Reservation = () => {
             maximumDate={new Date()}
             is24Hour={true}
             onChange={(event, value) => {
-              // const currentDate = selectedDate || date;
               setShow(false);
               if (value) {
                 setDate(value);
@@ -176,12 +193,9 @@ const styles = StyleSheet.create({
   formLabel: {
     flex: 2,
     fontSize: 18,
-    // backgroundColor: 'blue',
   },
   formItem: {
     flex: 1,
-    // height: 30,
-    // backgroundColor: 'tomato',
   },
 });
 const pickerSelectStyles = StyleSheet.create({
@@ -189,24 +203,23 @@ const pickerSelectStyles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
     paddingVertical: 10,
-    paddingHorizontal: 30,
+    paddingHorizontal: 50,
     borderWidth: 1,
     borderColor: 'gray',
-    borderRadius: 4,
+    borderRadius: 8,
     color: 'black',
-    paddingRight: 30, // to ensure the text is never behind the icon
+    paddingLeft: 30, // to ensure the text is never behind the icon
   },
   inputAndroid: {
     flex: 1,
     fontSize: 16,
-    justifyContent: 'center',
-    paddingHorizontal: 40,
-    paddingVertical: 10,
-    borderWidth: 0.5,
+    paddingHorizontal: 50,
+    paddingVertical: 5,
+    borderWidth: 1,
     borderColor: 'gray',
     borderRadius: 8,
     color: 'black',
-    paddingRight: 30, // to ensure the text is never behind the icon
+    paddingLeft: 30, // to ensure the text is never behind the icon
   },
 });
 export default Reservation;
