@@ -8,6 +8,7 @@ import {
   Button,
   Platform,
   TouchableOpacity,
+  Modal,
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import RNDateTimePicker from '@react-native-community/datetimepicker';
@@ -17,27 +18,48 @@ import {Icon} from 'react-native-elements';
 const Reservation = () => {
   const [guests, setGuests] = useState(1);
   const [smoking, setSmoking] = useState(false);
-  const [date, setDate] = useState(new Date('2020-07-15T09:21:42+07:00'));
+  const [date, setDate] = useState(new Date('2020-01-01T00:00:00+07:00'));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const inputRefs = useRef({guests: null});
 
   const handleReservation = () => {
     console.log(JSON.stringify({guests, smoking, date}));
-    setGuests(1);
-    setSmoking(false);
-    setDate(date);
-    setShow(false);
+    // setGuests(1);
+    // setSmoking(false);
+    // setDate(date);
+    // setShow(false);
+    toogleModal();
   };
   const showMode = (currentMode) => {
     setShow(true);
     setMode(currentMode);
   };
-  const showDatePicker = (value) => {
+  const showDateTimePicker = (value) => {
     showMode(value);
   };
-  const showTimePicker = (value) => {
-    showMode(value);
+  const MyButton = ({showValue, formatValue}) => {
+    return (
+      <TouchableOpacity
+        onPress={() => {
+          showDateTimePicker(showValue);
+        }}>
+        <Text style={{fontSize: 16, color: 'gray'}}>
+          {moment(date).format(formatValue)}
+        </Text>
+      </TouchableOpacity>
+    );
+  };
+  const toogleModal = () => {
+    setShowModal(!showModal);
+    console.log(`Toogle Modal:${showModal}`);
+  };
+  const resetForm = () => {
+    setGuests(1);
+    setSmoking(false);
+    setDate(date);
+    setShow(false);
   };
   return (
     <ScrollView>
@@ -55,7 +77,7 @@ const Reservation = () => {
           }}
           placeholder={{
             label: 'Select an item',
-            value: 0,
+            value: '',
           }}
           value={guests}
           useNativeAndroidPickerStyle={Platform.OS === 'ios' ? true : false} //android only
@@ -75,9 +97,6 @@ const Reservation = () => {
           onDownArrow={() => {
             inputRefs.guests.togglePicker();
           }}
-          // ref={(el) => {
-          //   inputRefs.guests = el;
-          // }}
           items={[
             {label: '1', value: '1'},
             {label: '2', value: '2'},
@@ -111,43 +130,16 @@ const Reservation = () => {
             styles.formItem,
             {flex: 3, flexDirection: 'row', justifyContent: 'space-around'},
           ]}>
-          {/*<Button title={moment(date).format()} onPress={showDatePicker} />*/}
-          {/*<Button*/}
-          {/*  title={moment(date, 'hh:mm:ss').format('hh:mm:ss')}*/}
-          {/*  onPress={showTimePicker}*/}
-          {/*/>*/}
           {Platform.OS === 'ios' ? (
-            <TouchableOpacity
-              onPress={() => {
-                showDatePicker('datetime');
-              }}>
-              <Text style={{fontSize: 16, color: 'gray'}}>
-                {moment(date).format()}
-              </Text>
-            </TouchableOpacity>
+            <MyButton showValue={'datetime'} formatValue={''} />
           ) : (
             <View
               style={{
                 flex: 3,
                 flexDirection: 'row',
-                // justifyContent: 'space-around',
               }}>
-              <TouchableOpacity
-                onPress={() => {
-                  showDatePicker('date');
-                }}>
-                <Text style={{fontSize: 16, color: 'gray'}}>
-                  {moment(date).format('YYYY-MM-DD')}
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => {
-                  showTimePicker('time');
-                }}>
-                <Text style={{fontSize: 16, color: 'gray'}}>
-                  {moment(date).format('Thh:mm:ssZ')}
-                </Text>
-              </TouchableOpacity>
+              <MyButton showValue={'date'} formatValue={'YYYY-MM-DD'} />
+              <MyButton showValue={'time'} formatValue={'Thh:mm:ssZ'} />
             </View>
           )}
         </View>
@@ -160,7 +152,7 @@ const Reservation = () => {
             mode={mode}
             display={'default'}
             minimumDate={new Date(2017, 1, 1)}
-            maximumDate={new Date()}
+            // maximumDate={new Date()}
             is24Hour={true}
             onChange={(event, value) => {
               setShow(false);
@@ -178,6 +170,37 @@ const Reservation = () => {
           onPress={() => handleReservation()}
           accessibilityLabel={'Learn more about this purple button'}
         />
+        <Modal
+          animationType={'slide'}
+          transparent={false}
+          visible={showModal}
+          onDismiss={() => {
+            // toogleModal();
+            resetForm();
+          }}
+          onRequestClose={() => {
+            toogleModal();
+            resetForm();
+          }}>
+          <View style={styles.modal}>
+            <Text style={styles.modalTitle}> Your Reservation</Text>
+            <Text style={styles.modalText}> Number of Guests: {guests} </Text>
+            <Text style={styles.modalText}>
+              Smoking? : {smoking ? 'Yes' : 'No'}
+            </Text>
+            <Text style={styles.modalText}>
+              Date and Time: {moment(date).format('')}
+            </Text>
+            <Button
+              title={'Close'}
+              color={'#512DA8'}
+              onPress={() => {
+                toogleModal();
+                resetForm();
+              }}
+            />
+          </View>
+        </Modal>
       </View>
     </ScrollView>
   );
@@ -196,6 +219,22 @@ const styles = StyleSheet.create({
   },
   formItem: {
     flex: 1,
+  },
+  modal: {
+    justifyContent: 'center',
+    margin: Platform.OS === 'ios' ? 60 : 30,
+  },
+  modalTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    backgroundColor: '#512DA8',
+    textAlign: 'center',
+    color: 'white',
+    marginBottom: 20,
+  },
+  modalText: {
+    fontSize: 18,
+    margin: 10,
   },
 });
 const pickerSelectStyles = StyleSheet.create({
