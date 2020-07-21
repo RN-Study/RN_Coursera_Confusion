@@ -12,8 +12,6 @@ const mapStateToProps = (state) => {
 };
 
 const Menu = (props) => {
-  // const [dishes] = useState(DISHES);
-
   const {navigate} = props.navigation;
 
   const renderMenuItem = ({item, index}) => {

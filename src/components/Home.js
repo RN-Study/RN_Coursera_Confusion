@@ -27,7 +27,7 @@ const Home = (props) => {
         </View>
       );
     } else {
-      if (item != null) {
+      if (item !== null) {
         return (
           <Card
             featuredTitle={item.name}

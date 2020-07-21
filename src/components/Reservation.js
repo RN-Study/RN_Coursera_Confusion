@@ -26,10 +26,9 @@ const Reservation = () => {
 
   const handleReservation = () => {
     console.log(JSON.stringify({guests, smoking, date}));
-    // setGuests(1);
-    // setSmoking(false);
-    // setDate(date);
-    // setShow(false);
+    guests;
+    smoking;
+    date;
     toogleModal();
   };
   const showMode = (currentMode) => {
@@ -53,7 +52,6 @@ const Reservation = () => {
   };
   const toogleModal = () => {
     setShowModal(!showModal);
-    console.log(`Toogle Modal:${showModal}`);
   };
   const resetForm = () => {
     setGuests(1);
@@ -164,12 +162,18 @@ const Reservation = () => {
         )}
       </View>
       <View style={styles.formRow}>
-        <Button
-          title={'Reserve'}
-          color={'#512DA8'}
-          onPress={() => handleReservation()}
-          accessibilityLabel={'Learn more about this purple button'}
-        />
+        <View
+          style={{
+            backgroundColor: Platform.OS === 'ios' ? '#512DA8' : '',
+            borderRadius: 5,
+          }}>
+          <Button
+            title={'Reserve'}
+            color={Platform.OS === 'ios' ? 'white' : '#512DA8'}
+            onPress={() => handleReservation()}
+            accessibilityLabel={'Learn more about this purple button'}
+          />
+        </View>
         <Modal
           animationType={'slide'}
           transparent={false}
@@ -191,14 +195,20 @@ const Reservation = () => {
             <Text style={styles.modalText}>
               Date and Time: {moment(date).format('')}
             </Text>
-            <Button
-              title={'Close'}
-              color={'#512DA8'}
-              onPress={() => {
-                toogleModal();
-                resetForm();
-              }}
-            />
+            <View
+              style={{
+                backgroundColor: Platform.OS === 'ios' ? '#512DA8' : '',
+                borderRadius: 5,
+              }}>
+              <Button
+                title={'Close'}
+                color={Platform.OS === 'ios' ? 'white' : '#512DA8'}
+                onPress={() => {
+                  toogleModal();
+                  resetForm();
+                }}
+              />
+            </View>
           </View>
         </Modal>
       </View>
