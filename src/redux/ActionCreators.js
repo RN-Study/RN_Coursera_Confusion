@@ -157,7 +157,7 @@ export const addLeaders = (leaders) => ({
 export const postFavorite = (dishId) => (dispatch) => {
   setTimeout(() => {
     dispatch(addFavorite(dishId));
-  }, 2000);
+  }, 500);
 };
 export const addFavorite = (dishId) => ({
   type: ActionTypes.ADD_FAVORITE,
@@ -174,18 +174,14 @@ export const addComment = (comment) => ({
   payload: comment,
 });
 
-export const postComment = (dishId, author, comment, rating) => (dispatch) => {
-  const newComment = {
-    dishId: dishId,
-    author: author,
-    comment: comment,
-    rating: rating,
-  };
-  const cmtDate = moment(new Date()).toISOString(true);
-  console.log(cmtDate);
-  newComment.date = cmtDate;
+export const postComment = (newComment) => (dispatch) => {
+  const myDate = new Date();
+  const currentDate = new Date(
+    myDate.getTime() - myDate.getTimezoneOffset() * 60000,
+  ).toISOString();
+  newComment.date = currentDate;
   newComment.id = null;
   setTimeout(() => {
     dispatch(addComment(newComment));
-  }, 2000);
+  }, 500);
 };

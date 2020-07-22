@@ -4,24 +4,15 @@ import {
   StyleSheet,
   FlatList,
   Text,
-  ScrollView,
-  Button,
-  Modal,
   Platform,
-  TextInput,
-  SafeAreaView,
+  Animated,
 } from 'react-native';
 import {Card, Icon, Input, Rating} from 'react-native-elements';
 import {connect} from 'react-redux';
 import {baseURL} from '../shared/baseURL';
-import {
-  addComment,
-  addComments,
-  postComment,
-  postFavorite,
-} from '../redux/ActionCreators';
+import {addComment, postFavorite, postComment} from '../redux/ActionCreators';
 import CommentForm from './CommentForm';
-import moment from 'moment';
+import * as Animatable from 'react-native-animatable';
 
 const mapStateToProps = (state) => {
   return {
@@ -33,7 +24,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   postFavorite: (dishId) => dispatch(postFavorite(dishId)),
-  addComment: (comment) => dispatch(addComment(comment)),
+  addComment: (comment) => dispatch(postComment(comment)),
 });
 
 const DishDetail = (props) => {
