@@ -6,6 +6,7 @@ import {baseURL} from '../shared/baseURL';
 import Loading from './Loading';
 import {deleteFavorite} from '../redux/ActionCreators';
 import Swipeout from 'react-native-swipeout';
+import * as Animatable from 'react-native-animatable';
 
 const mapStateToProps = (state) => {
   return {
@@ -50,14 +51,19 @@ const Favorite = (props) => {
     ];
     return (
       <Swipeout right={RightButton} autoClose={true}>
-        <ListItem
-          key={index}
-          title={item.name}
-          subtitle={item.description}
-          chevron={false}
-          onPress={() => navigate('DishDetail', {dishId: item.id})}
-          leftAvatar={{source: {uri: baseURL + item.image}}}
-        />
+        <Animatable.View
+          animation={'fadeInRightBig'}
+          duration={2000}
+          delay={1000}>
+          <ListItem
+            key={index}
+            title={item.name}
+            subtitle={item.description}
+            chevron={false}
+            onPress={() => navigate('DishDetail', {dishId: item.id})}
+            leftAvatar={{source: {uri: baseURL + item.image}}}
+          />
+        </Animatable.View>
       </Swipeout>
     );
   };
@@ -72,6 +78,10 @@ const Favorite = (props) => {
     );
   } else {
     return (
+      // <Animatable.View
+      //   animation={'fadeInRightBig'}
+      //   duration={2000}
+      //   delay={1000}>
       <FlatList
         data={props.dishes.dishes.filter((dish) =>
           props.favorites.some((el) => el === dish.id),
@@ -79,6 +89,7 @@ const Favorite = (props) => {
         renderItem={RenderMenuItem}
         keyExtractor={(item) => item.id.toString()}
       />
+      // </Animatable.View>
     );
   }
 };
