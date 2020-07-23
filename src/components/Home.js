@@ -1,17 +1,9 @@
-import React, {Component, useEffect, useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  ScrollView,
-  Text,
-  Animated,
-  Easing,
-} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, StyleSheet, Text, Animated, Easing} from 'react-native';
 import {Card} from 'react-native-elements';
 import {connect} from 'react-redux';
 import {baseURL} from '../shared/baseURL';
 import Loading from './Loading';
-import {promotions} from '../redux/promotions';
 
 const mapStateToProps = (state) => {
   return {

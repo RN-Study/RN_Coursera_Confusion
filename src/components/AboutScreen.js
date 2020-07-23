@@ -1,12 +1,5 @@
-import React, {useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  Text,
-  FlatList,
-  SafeAreaView,
-  ScrollView,
-} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, StyleSheet, Text, FlatList, SafeAreaView} from 'react-native';
 import {Card, ListItem} from 'react-native-elements';
 import {HISTORY} from '../shared/history';
 import {connect} from 'react-redux';
@@ -37,47 +30,60 @@ const AboutScreen = (props) => {
       />
     );
   };
-  const History = (props) => {
+  const RenderHistory = (props) => {
     return (
       <Card title={'Our History'}>
         <Text style={{}}> {history} </Text>
       </Card>
     );
   };
+  const RenderLeaders = (props) => {
+    return (
+      <Card containerStyle={{flex: 1}} title={'Corporate Leadership'}>
+        <FlatList
+          data={props.leaders.leaders}
+          renderItem={renderLeaderItem}
+          keyExtractor={(item) => item.id.toString()}
+        />
+      </Card>
+    );
+  };
+  const RenderAboutScreen = () => {
+    return (
+      <FlatList
+        ListHeaderComponent={() => <RenderHistory />}
+        ListFooterComponent={() => <RenderLeaders {...props} />}
+      />
+    );
+  };
+
   if (props.leaders.isLoading) {
     return (
-      <ScrollView>
-        <History />
+      <SafeAreaView>
+        <RenderHistory />
         <Card title={'Corporate Leadership'}>
           <Loading />
         </Card>
-      </ScrollView>
+      </SafeAreaView>
     );
   } else if (props.leaders.errorMessage) {
     return (
-      <ScrollView>
+      <SafeAreaView>
         <Animatable.View animation={'fadeInDown'} duration={2000} delay={1000}>
-          <History />
+          <RenderHistory />
           <Card title={'Corporate Leadership'}>
             <Text> {props.leaders.errorMessage} </Text>
           </Card>
         </Animatable.View>
-      </ScrollView>
+      </SafeAreaView>
     );
   } else {
     return (
-      <ScrollView>
+      <SafeAreaView>
         <Animatable.View animation={'fadeInDown'} duration={2000} delay={1000}>
-          <History />
-          <Card containerStyle={{flex: 1}} title={'Corporate Leadership'}>
-            <FlatList
-              data={props.leaders.leaders}
-              renderItem={renderLeaderItem}
-              keyExtractor={(item) => item.id.toString()}
-            />
-          </Card>
+          <RenderAboutScreen />
         </Animatable.View>
-      </ScrollView>
+      </SafeAreaView>
     );
   }
 };

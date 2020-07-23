@@ -6,6 +6,8 @@ import {
   Text,
   Platform,
   Animated,
+  Alert,
+  PanResponder,
 } from 'react-native';
 import {Card, Icon, Rating} from 'react-native-elements';
 import {connect} from 'react-redux';
@@ -13,6 +15,7 @@ import {baseURL} from '../shared/baseURL';
 import {postFavorite, postComment} from '../redux/ActionCreators';
 import CommentForm from './CommentForm';
 import * as Animatable from 'react-native-animatable';
+import {log} from 'react-native-reanimated';
 
 const mapStateToProps = (state) => {
   return {
@@ -46,10 +49,53 @@ const DishDetail = (props) => {
 
   const RenderDish = (props) => {
     const dish = props.dish;
+    const recognizeDrag = ({moveX, moveY, dx, dy}) => {
+      if (dx < -200) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    const panResponder = PanResponder.create({
+      onStartShouldSetPanResponder: (e, gestureState) => {
+        return true;
+      },
+      onPanResponderEnd: (e, gestureState) => {
+        if (recognizeDrag(gestureState)) {
+          Alert.alert(
+            'Add favorite?',
+            'Are you sure you wish to add' + dish.name + 'to favorite ?',
+            [
+              {
+                text: 'Cancel',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel',
+              },
+              {
+                text: 'OK',
+                onPress: () => {
+                  props.favorite
+                    ? console.log('Alread favorite')
+                    : props.onPressFavorite();
+                },
+                style: 'cancel',
+              },
+            ],
+            {cancelable: false},
+          );
+          return true;
+        }
+      },
+    });
 
     if (dish != null) {
       return (
-        <Animatable.View animation={'fadeInDown'} duration={2000} delay={1000}>
+        <Animatable.View
+          animation={'fadeInDown'}
+          duration={2000}
+          delay={1000}
+          {...panResponder.panHandlers}>
           <Card featuredTitle={dish.name} image={{uri: baseURL + dish.image}}>
             <Text style={{margin: 10}}> {dish.description} </Text>
             <View style={{flexDirection: 'row', justifyContent: 'center'}}>
