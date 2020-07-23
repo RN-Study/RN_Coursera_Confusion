@@ -63,11 +63,6 @@ const DishDetail = (props) => {
         return true;
       },
       onPanResponderGrant: () => {
-        // props.view
-        //   .rubberBand(1000)
-        //   .then((endState) =>
-        //     console.log(endState.finished ? 'finished' : 'cancelled'),
-        //   );
         handleViewRef.current
           .rubberBand(1000)
           .then((endState) =>
