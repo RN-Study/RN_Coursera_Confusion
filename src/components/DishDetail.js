@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {
   View,
   StyleSheet,
@@ -15,7 +15,6 @@ import {baseURL} from '../shared/baseURL';
 import {postFavorite, postComment} from '../redux/ActionCreators';
 import CommentForm from './CommentForm';
 import * as Animatable from 'react-native-animatable';
-import {log} from 'react-native-reanimated';
 
 const mapStateToProps = (state) => {
   return {
@@ -49,6 +48,8 @@ const DishDetail = (props) => {
 
   const RenderDish = (props) => {
     const dish = props.dish;
+    // const handleViewRef = (ref) => (props.view = ref);
+    const handleViewRef = useRef(null);
     const recognizeDrag = ({moveX, moveY, dx, dy}) => {
       if (dx < -200) {
         return true;
@@ -60,6 +61,18 @@ const DishDetail = (props) => {
     const panResponder = PanResponder.create({
       onStartShouldSetPanResponder: (e, gestureState) => {
         return true;
+      },
+      onPanResponderGrant: () => {
+        // props.view
+        //   .rubberBand(1000)
+        //   .then((endState) =>
+        //     console.log(endState.finished ? 'finished' : 'cancelled'),
+        //   );
+        handleViewRef.current
+          .rubberBand(1000)
+          .then((endState) =>
+            console.log(endState.finished ? 'finished' : 'cancelled'),
+          );
       },
       onPanResponderEnd: (e, gestureState) => {
         if (recognizeDrag(gestureState)) {
@@ -95,6 +108,7 @@ const DishDetail = (props) => {
           animation={'fadeInDown'}
           duration={2000}
           delay={1000}
+          ref={handleViewRef}
           {...panResponder.panHandlers}>
           <Card featuredTitle={dish.name} image={{uri: baseURL + dish.image}}>
             <Text style={{margin: 10}}> {dish.description} </Text>
