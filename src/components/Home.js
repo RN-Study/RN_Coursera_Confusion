@@ -21,7 +21,7 @@ const Home = (props) => {
     animatedValue.setValue(0);
     Animated.timing(animatedValue, {
       toValue: 8,
-      duration: 8000,
+      duration: 16000,
       easing: Easing.linear,
       useNativeDriver: true,
     }).start(() => animate());

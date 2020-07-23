@@ -12,14 +12,18 @@ import Main from './src/components/Main';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
 import {ConfigureStore} from './src/redux/configureStore';
+import {PersistGate} from 'redux-persist/es/integration/react';
+import Loading from './src/components/Loading';
 
-const store = ConfigureStore();
+const {store, persistor} = ConfigureStore();
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
     <NavigationContainer>
       <Provider store={store}>
-        <Main />
+        <PersistGate loading={<Loading />} persistor={persistor}>
+          <Main />
+        </PersistGate>
       </Provider>
     </NavigationContainer>
   );
