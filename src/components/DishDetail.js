@@ -87,7 +87,7 @@ const DishDetail = (props) => {
                     ? console.log('Alread favorite')
                     : props.onPressFavorite();
                 },
-                style: 'cancel',
+                style: 'OK',
               },
             ],
             {cancelable: false},

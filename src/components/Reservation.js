@@ -9,6 +9,8 @@ import {
   Platform,
   TouchableOpacity,
   Modal,
+  Alert,
+  PanResponder,
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import RNDateTimePicker from '@react-native-community/datetimepicker';
@@ -19,8 +21,8 @@ import * as Animatable from 'react-native-animatable';
 const Reservation = () => {
   const [guests, setGuests] = useState(1);
   const [smoking, setSmoking] = useState(false);
-  const [date, setDate] = useState(new Date('2020-01-01T00:00:00+07:00'));
-  const [mode, setMode] = useState('date');
+  const [date, setDate] = useState(new Date());
+  const [mode, setMode] = useState(Platform.OS === 'ios' ? 'datetime' : 'date');
   const [show, setShow] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const inputRefs = useRef({guests: null});
@@ -28,25 +30,6 @@ const Reservation = () => {
   const handleReservation = () => {
     console.log(JSON.stringify({guests, smoking, date}));
     toogleModal();
-  };
-  const showMode = (currentMode) => {
-    setShow(true);
-    setMode(currentMode);
-  };
-  const showDateTimePicker = (value) => {
-    showMode(value);
-  };
-  const MyButton = ({showValue, formatValue}) => {
-    return (
-      <TouchableOpacity
-        onPress={() => {
-          showDateTimePicker(showValue);
-        }}>
-        <Text style={{fontSize: 16, color: 'gray'}}>
-          {moment(date).format(formatValue)}
-        </Text>
-      </TouchableOpacity>
-    );
   };
   const toogleModal = () => {
     setShowModal(!showModal);
@@ -57,6 +40,65 @@ const Reservation = () => {
     setDate(date);
     setShow(false);
   };
+  const handleViewRef = useRef(null);
+  const recognizeDrag = ({moveX, moveY, dx, dy}) => {
+    if (dx !== -10 && dy !== -10) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  const panResponder = PanResponder.create({
+    onStartShouldSetPanResponder: (e, gestureState) => {
+      return true;
+    },
+    onPanResponderGrant: () => {
+      handleViewRef.current
+        .rubberBand(1000)
+        .then((endState) =>
+          console.log(endState.finished ? 'finished' : 'cancelled'),
+        );
+    },
+    // onMoveShouldSetPanResponder: (e, gestureState) => {
+    //   //return true if user is swiping, return false if it's a single click
+    //   return !(gestureState.dx === 0 && gestureState.dy === 0);
+    // },
+    onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
+      return gestureState.dx != 0 && gestureState.dy != 0;
+    },
+    onPanResponderEnd: (e, gestureState) => {
+      if (recognizeDrag(gestureState)) {
+        Alert.alert(
+          'Your Reservation OK?',
+          [
+            `Number of Guests:  ${guests}`,
+            `Smoking ?  ${smoking ? 'Yes' : 'No'}`,
+            'Date and Time: ' + '  ' + moment(date).format(''),
+          ],
+          [
+            {
+              text: 'Cancel',
+              onPress: () => {
+                console.log('Cancel Pressed');
+                resetForm();
+              },
+              style: 'cancel',
+            },
+            {
+              text: 'OK',
+              onPress: () => {
+                console.log('OK Pressed');
+                resetForm();
+              },
+              style: 'OK',
+            },
+          ],
+          {cancelable: false},
+        );
+        return true;
+      }
+    },
+  });
   return (
     <ScrollView>
       <Animatable.View animation={'zoomIn'} duration={2000} delay={1000}>
@@ -120,95 +162,141 @@ const Reservation = () => {
         </View>
         <View style={styles.formRow}>
           <Text style={styles.formLabel}> Date and Time </Text>
-          <View
-            style={[
-              styles.formItem,
-              {flex: 3, flexDirection: 'row', justifyContent: 'space-around'},
-            ]}>
-            {Platform.OS === 'ios' ? (
-              <MyButton showValue={'datetime'} formatValue={''} />
-            ) : (
-              <View
-                style={{
-                  flex: 3,
-                  flexDirection: 'row',
-                }}>
-                <MyButton showValue={'date'} formatValue={'YYYY-MM-DD'} />
-                <MyButton showValue={'time'} formatValue={'Thh:mm:ssZ'} />
-              </View>
-            )}
-          </View>
+          <TouchableOpacity
+            style={{
+              padding: 5,
+              justifyContent: 'center',
+              alignContent: 'center',
+              borderColor: 'gray',
+              borderWidth: 1,
+              borderRadius: 5,
+              flexDirection: 'row',
+            }}
+            onPress={() => {
+              setShow(true);
+              setMode('date');
+            }}>
+            <Icon
+              name={'calendar'}
+              type={'font-awesome'}
+              color={'gray'}
+              style={{paddingHorizontal: 10}}
+            />
+            <Text
+              style={{
+                textAlign: 'center',
+                alignItems: 'center',
+                paddingVertical: 5,
+                paddingHorizontal: 10,
+                color: 'gray',
+              }}>
+              {' '}
+              {'' + moment(date).format('YYYY-MM-DDThh:mm:ss A')}{' '}
+            </Text>
+          </TouchableOpacity>
+          {/*<View*/}
+          {/*  style={[*/}
+          {/*    styles.formItem,*/}
+          {/*    {flex: 3, flexDirection: 'row', justifyContent: 'space-around'},*/}
+          {/*  ]}>*/}
+          {/*  {Platform.OS === 'ios' ? (*/}
+          {/*    <MyButton showValue={'datetime'} formatValue={''} />*/}
+          {/*  ) : (*/}
+          {/*    <View*/}
+          {/*      style={{*/}
+          {/*        flex: 3,*/}
+          {/*        flexDirection: 'row',*/}
+          {/*      }}>*/}
+          {/*      <MyButton showValue={'date'} formatValue={'YYYY-MM-DD'} />*/}
+          {/*      <MyButton showValue={'time'} formatValue={'Thh:mm:ssZ'} />*/}
+          {/*    </View>*/}
+          {/*  )}*/}
+          {/*</View>*/}
         </View>
         <View style={{flex: 1}}>
           {show && (
             <RNDateTimePicker
-              style={{flex: 3, marginLeft: 0}}
               value={date}
               mode={mode}
               display={'default'}
-              minimumDate={new Date(2017, 1, 1)}
+              minimumDate={new Date()}
               // maximumDate={new Date()}
-              is24Hour={true}
+              // is24Hour={true}
               onChange={(event, value) => {
-                setShow(false);
-                if (value) {
-                  setDate(value);
+                if (value === undefined) {
+                  setShow(false);
+                } else {
+                  setShow(mode === 'time' ? false : true);
+                  setMode('time');
+                  setDate(new Date(value));
                 }
               }}
             />
           )}
         </View>
         <View style={styles.formRow}>
-          <View
-            style={{
-              backgroundColor: Platform.OS === 'ios' ? '#512DA8' : '',
-              borderRadius: 5,
-              paddingHorizontal: 80,
-            }}>
-            <Button
-              title={'Reserve'}
-              color={Platform.OS === 'ios' ? 'white' : '#512DA8'}
-              onPress={() => handleReservation()}
-              accessibilityLabel={'Learn more about this purple button'}
-            />
-          </View>
-          <Modal
-            animationType={'slide'}
-            transparent={false}
-            visible={showModal}
-            onDismiss={() => {
-              // toogleModal();
-              resetForm();
-            }}
-            onRequestClose={() => {
-              toogleModal();
-              resetForm();
-            }}>
-            <View style={styles.modal}>
-              <Text style={styles.modalTitle}> Your Reservation</Text>
-              <Text style={styles.modalText}> Number of Guests: {guests} </Text>
-              <Text style={styles.modalText}>
-                Smoking? : {smoking ? 'Yes' : 'No'}
-              </Text>
-              <Text style={styles.modalText}>
-                Date and Time: {moment(date).format('')}
-              </Text>
-              <View
-                style={{
-                  backgroundColor: Platform.OS === 'ios' ? '#512DA8' : '',
-                  borderRadius: 5,
-                }}>
-                <Button
-                  title={'Close'}
-                  color={Platform.OS === 'ios' ? 'white' : '#512DA8'}
-                  onPress={() => {
-                    toogleModal();
-                    resetForm();
-                  }}
-                />
-              </View>
+          <Animatable.View
+            animation={'zoomIn'}
+            duration={2000}
+            delay={1000}
+            ref={handleViewRef}
+            {...panResponder.panHandlers}>
+            <View
+              style={{
+                backgroundColor: Platform.OS === 'ios' ? '#512DA8' : '',
+                borderRadius: 5,
+                paddingHorizontal: 80,
+              }}>
+              <Button
+                title={'Reserve'}
+                color={Platform.OS === 'ios' ? 'white' : '#512DA8'}
+                // onPress={() => handleReservation()}
+                onPress={() => {}}
+                accessibilityLabel={'Learn more about this purple button'}
+              />
             </View>
-          </Modal>
+            <Modal
+              animationType={'slide'}
+              transparent={false}
+              visible={showModal}
+              onDismiss={() => {
+                // toogleModal();
+                resetForm();
+              }}
+              onRequestClose={() => {
+                toogleModal();
+                resetForm();
+              }}>
+              <View style={styles.modal}>
+                <Text style={styles.modalTitle}> Your Reservation</Text>
+                <Text style={styles.modalText}>
+                  {' '}
+                  Number of Guests: {guests}{' '}
+                </Text>
+                <Text style={styles.modalText}>
+                  Smoking? : {smoking ? 'Yes' : 'No'}
+                </Text>
+                <Text style={styles.modalText}>
+                  Date and Time: {moment(date).format('')}
+                </Text>
+
+                <View
+                  style={{
+                    backgroundColor: Platform.OS === 'ios' ? '#512DA8' : '',
+                    borderRadius: 5,
+                  }}>
+                  <Button
+                    title={'Close'}
+                    color={Platform.OS === 'ios' ? 'white' : '#512DA8'}
+                    onPress={() => {
+                      toogleModal();
+                      resetForm();
+                    }}
+                  />
+                </View>
+              </View>
+            </Modal>
+          </Animatable.View>
         </View>
       </Animatable.View>
     </ScrollView>
