@@ -50,8 +50,15 @@ const DishDetail = (props) => {
     const dish = props.dish;
     // const handleViewRef = (ref) => (props.view = ref);
     const handleViewRef = useRef(null);
-    const recognizeDrag = ({moveX, moveY, dx, dy}) => {
-      if (dx < -200) {
+    const recognizeDragRightToLeft = ({moveX, moveY, dx, dy}) => {
+      if (dx < -80) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+    const recognizeDragLeftToRight = ({moveX, moveY, dx, dy}) => {
+      if (dx > 30) {
         return true;
       } else {
         return false;
@@ -70,7 +77,7 @@ const DishDetail = (props) => {
           );
       },
       onPanResponderEnd: (e, gestureState) => {
-        if (recognizeDrag(gestureState)) {
+        if (recognizeDragRightToLeft(gestureState)) {
           Alert.alert(
             'Add favorite?',
             'Are you sure you wish to add' + dish.name + 'to favorite ?',
@@ -93,6 +100,8 @@ const DishDetail = (props) => {
             {cancelable: false},
           );
           return true;
+        } else if (recognizeDragLeftToRight(gestureState)) {
+          toogleModal();
         }
       },
     });
