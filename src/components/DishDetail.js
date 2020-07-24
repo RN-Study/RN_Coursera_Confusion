@@ -51,14 +51,14 @@ const DishDetail = (props) => {
     // const handleViewRef = (ref) => (props.view = ref);
     const handleViewRef = useRef(null);
     const recognizeDragRightToLeft = ({moveX, moveY, dx, dy}) => {
-      if (dx < -80) {
+      if (dx < -40) {
         return true;
       } else {
         return false;
       }
     };
     const recognizeDragLeftToRight = ({moveX, moveY, dx, dy}) => {
-      if (dx > 30) {
+      if (dx > 40) {
         return true;
       } else {
         return false;

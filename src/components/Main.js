@@ -32,6 +32,7 @@ import {
   fetchPromos,
   postComment,
 } from '../redux/ActionCreators';
+import Login from './Login';
 
 const mapStateToProps = (state) => {
   return {
@@ -47,7 +48,6 @@ const mapDispatchToProps = (dispatch) => ({
   fetchComments: () => dispatch(fetchComments()),
   fetchPromos: () => dispatch(fetchPromos()),
   fetchLeaders: () => dispatch(fetchLeaders()),
-  // postComment: () => dispatch(postComment()),
 });
 
 const Stack = createStackNavigator();
@@ -85,6 +85,36 @@ export const MenuNavigator = ({navigation}) => {
         component={DishDetail}
         options={{
           title: 'Dish Detail',
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+export const LoginNavigator = ({navigation}) => {
+  return (
+    <Stack.Navigator
+      initialRouteName="Login"
+      // headerMode={'none'}
+      screenOptions={{
+        headerStyle: {backgroundColor: '#512DA8'},
+        headerTintColor: '#FFF',
+        headerTitleStyle: {color: '#FFF'},
+        headerLeft: () => (
+          <Icon
+            name={'menu'}
+            size={24}
+            color={'white'}
+            onPress={() => {
+              navigation.toggleDrawer();
+            }}
+          />
+        ),
+      }}>
+      <Stack.Screen
+        name={'Login'}
+        component={Login}
+        options={{
+          title: 'Login',
         }}
       />
     </Stack.Navigator>
@@ -283,7 +313,10 @@ export const MainNavigator = (props) => {
           let iconName;
           let iconType = 'font-awesome';
           let size;
-          if (route.name === 'Home') {
+          if (route.name === 'Login') {
+            iconName = `sign-in${focused ? '' : ''}`;
+            size = 24;
+          } else if (route.name === 'Home') {
             iconName = `home${focused ? '' : ''}`;
             size = 24;
           } else if (route.name === 'About') {
@@ -307,6 +340,14 @@ export const MainNavigator = (props) => {
           );
         },
       })}>
+      <Drawer.Screen
+        name={'Login'}
+        component={LoginNavigator}
+        options={{
+          title: 'Login',
+          drawerLabel: 'Login',
+        }}
+      />
       <Drawer.Screen
         name={'Home'}
         component={HomeNavigator}
