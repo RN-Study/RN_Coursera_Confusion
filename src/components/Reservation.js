@@ -21,15 +21,45 @@ import * as Animatable from 'react-native-animatable';
 const Reservation = () => {
   const [guests, setGuests] = useState(1);
   const [smoking, setSmoking] = useState(false);
-  const [date, setDate] = useState(new Date());
-  const [mode, setMode] = useState(Platform.OS === 'ios' ? 'datetime' : 'date');
+  const [date, setDate] = useState('');
+  const [mode, setMode] = useState('');
   const [show, setShow] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const inputRefs = useRef({guests: null});
 
   const handleReservation = () => {
     console.log(JSON.stringify({guests, smoking, date}));
-    toogleModal();
+    // toogleModal();
+    Alert.alert(
+      'Your Reservation OK?',
+
+      `Number of Guests:  ${guests}` +
+        '\n' +
+        `Smoking? ${smoking ? 'Yes' : 'No'}` +
+        '\n' +
+        'Date and Time:' +
+        '  ' +
+        moment(date).format(''),
+      [
+        {
+          text: 'Cancel',
+          onPress: () => {
+            console.log('Cancel Pressed');
+            // resetForm();
+          },
+          style: 'cancel',
+        },
+        {
+          text: 'OK',
+          onPress: () => {
+            console.log('OK Pressed');
+            resetForm();
+          },
+          style: 'default',
+        },
+      ],
+      {cancelable: false},
+    );
   };
   const toogleModal = () => {
     setShowModal(!showModal);
@@ -37,68 +67,10 @@ const Reservation = () => {
   const resetForm = () => {
     setGuests(1);
     setSmoking(false);
-    setDate(date);
+    setDate('');
     setShow(false);
   };
-  const handleViewRef = useRef(null);
-  const recognizeDrag = ({moveX, moveY, dx, dy}) => {
-    if (dx !== -10 && dy !== -10) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-  const panResponder = PanResponder.create({
-    onStartShouldSetPanResponder: (e, gestureState) => {
-      return true;
-    },
-    onPanResponderGrant: () => {
-      handleViewRef.current
-        .rubberBand(1000)
-        .then((endState) =>
-          console.log(endState.finished ? 'finished' : 'cancelled'),
-        );
-    },
-    // onMoveShouldSetPanResponder: (e, gestureState) => {
-    //   //return true if user is swiping, return false if it's a single click
-    //   return !(gestureState.dx === 0 && gestureState.dy === 0);
-    // },
-    onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
-      return gestureState.dx != 0 && gestureState.dy != 0;
-    },
-    onPanResponderEnd: (e, gestureState) => {
-      if (recognizeDrag(gestureState)) {
-        Alert.alert(
-          'Your Reservation OK?',
-          [
-            `Number of Guests:  ${guests}`,
-            `Smoking ?  ${smoking ? 'Yes' : 'No'}`,
-            'Date and Time: ' + '  ' + moment(date).format(''),
-          ],
-          [
-            {
-              text: 'Cancel',
-              onPress: () => {
-                console.log('Cancel Pressed');
-                resetForm();
-              },
-              style: 'cancel',
-            },
-            {
-              text: 'OK',
-              onPress: () => {
-                console.log('OK Pressed');
-                resetForm();
-              },
-              style: 'OK',
-            },
-          ],
-          {cancelable: false},
-        );
-        return true;
-      }
-    },
-  });
+
   return (
     <ScrollView>
       <Animatable.View animation={'zoomIn'} duration={2000} delay={1000}>
@@ -175,6 +147,9 @@ const Reservation = () => {
             onPress={() => {
               setShow(true);
               setMode('date');
+              Platform.OS === 'ios'
+                ? setDate(new Date('2018-01-01T00:00:00'))
+                : setDate(new Date());
             }}>
             <Icon
               name={'calendar'}
@@ -190,28 +165,11 @@ const Reservation = () => {
                 paddingHorizontal: 10,
                 color: 'gray',
               }}>
-              {' '}
-              {'' + moment(date).format('YYYY-MM-DDThh:mm:ss A')}{' '}
+              {!date
+                ? 'Select date and time'
+                : moment(date).format('YYYY-MM-DDThh:mm:ss A')}
             </Text>
           </TouchableOpacity>
-          {/*<View*/}
-          {/*  style={[*/}
-          {/*    styles.formItem,*/}
-          {/*    {flex: 3, flexDirection: 'row', justifyContent: 'space-around'},*/}
-          {/*  ]}>*/}
-          {/*  {Platform.OS === 'ios' ? (*/}
-          {/*    <MyButton showValue={'datetime'} formatValue={''} />*/}
-          {/*  ) : (*/}
-          {/*    <View*/}
-          {/*      style={{*/}
-          {/*        flex: 3,*/}
-          {/*        flexDirection: 'row',*/}
-          {/*      }}>*/}
-          {/*      <MyButton showValue={'date'} formatValue={'YYYY-MM-DD'} />*/}
-          {/*      <MyButton showValue={'time'} formatValue={'Thh:mm:ssZ'} />*/}
-          {/*    </View>*/}
-          {/*  )}*/}
-          {/*</View>*/}
         </View>
         <View style={{flex: 1}}>
           {show && (
@@ -223,80 +181,69 @@ const Reservation = () => {
               // maximumDate={new Date()}
               // is24Hour={true}
               onChange={(event, value) => {
-                if (value === undefined) {
-                  setShow(false);
-                } else {
+                if (value !== undefined) {
                   setShow(mode === 'time' ? false : true);
                   setMode('time');
                   setDate(new Date(value));
+                } else {
+                  setShow(false);
                 }
               }}
             />
           )}
         </View>
         <View style={styles.formRow}>
-          <Animatable.View
-            animation={'zoomIn'}
-            duration={2000}
-            delay={1000}
-            ref={handleViewRef}
-            {...panResponder.panHandlers}>
-            <View
-              style={{
-                backgroundColor: Platform.OS === 'ios' ? '#512DA8' : '',
-                borderRadius: 5,
-                paddingHorizontal: 80,
-              }}>
-              <Button
-                title={'Reserve'}
-                color={Platform.OS === 'ios' ? 'white' : '#512DA8'}
-                // onPress={() => handleReservation()}
-                onPress={() => {}}
-                accessibilityLabel={'Learn more about this purple button'}
-              />
-            </View>
-            <Modal
-              animationType={'slide'}
-              transparent={false}
-              visible={showModal}
-              onDismiss={() => {
-                // toogleModal();
-                resetForm();
-              }}
-              onRequestClose={() => {
-                toogleModal();
-                resetForm();
-              }}>
-              <View style={styles.modal}>
-                <Text style={styles.modalTitle}> Your Reservation</Text>
-                <Text style={styles.modalText}>
-                  {' '}
-                  Number of Guests: {guests}{' '}
-                </Text>
-                <Text style={styles.modalText}>
-                  Smoking? : {smoking ? 'Yes' : 'No'}
-                </Text>
-                <Text style={styles.modalText}>
-                  Date and Time: {moment(date).format('')}
-                </Text>
+          <View
+            style={{
+              backgroundColor: Platform.OS === 'ios' ? '#512DA8' : '',
+              borderRadius: 5,
+              paddingHorizontal: 80,
+            }}>
+            <Button
+              title={'Reserve'}
+              color={Platform.OS === 'ios' ? 'white' : '#512DA8'}
+              onPress={() => handleReservation()}
+              accessibilityLabel={'Learn more about this purple button'}
+            />
+          </View>
+          <Modal
+            animationType={'slide'}
+            transparent={false}
+            visible={showModal}
+            onDismiss={() => {
+              // toogleModal();
+              resetForm();
+            }}
+            onRequestClose={() => {
+              toogleModal();
+              resetForm();
+            }}>
+            <View style={styles.modal}>
+              <Text style={styles.modalTitle}> Your Reservation</Text>
+              <Text style={styles.modalText}> Number of Guests: {guests} </Text>
+              <Text style={styles.modalText}>
+                Smoking? : {smoking ? 'Yes' : 'No'}
+              </Text>
+              <Text style={styles.modalText}>
+                Date and Time: {moment(date).format('')}
+              </Text>
 
-                <View
-                  style={{
-                    backgroundColor: Platform.OS === 'ios' ? '#512DA8' : '',
-                    borderRadius: 5,
-                  }}>
-                  <Button
-                    title={'Close'}
-                    color={Platform.OS === 'ios' ? 'white' : '#512DA8'}
-                    onPress={() => {
-                      toogleModal();
-                      resetForm();
-                    }}
-                  />
-                </View>
+              <View
+                style={{
+                  backgroundColor: Platform.OS === 'ios' ? '#512DA8' : '',
+                  borderRadius: 5,
+                }}>
+                <Button
+                  title={'Close'}
+                  color={Platform.OS === 'ios' ? 'white' : '#512DA8'}
+                  onPress={() => {
+                    toogleModal();
+                    resetForm();
+                  }}
+                />
               </View>
-            </Modal>
-          </Animatable.View>
+            </View>
+          </Modal>
         </View>
       </Animatable.View>
     </ScrollView>
